@@ -1,0 +1,58 @@
+/*Fonts, size, colours*/
+
+:root {
+    /*Colours*/
+    --primary-yellow: #FFD876; 
+    --secondary-yellow: #FFE7AB; 
+    --accent-primary: #34929C; 
+    --accent-secondary: #599FA4; 
+    --text-black: #403021;
+    /*Text sizes*/
+    --text-size-large: 60px;
+    --text-size-medium: 40px; 
+    --text-size-small: 25px;
+    
+  }
+
+
+/*Fonts*/
+@font-face {
+    font-family: 'Lora';
+    src: url('/Assets/fonts/Lora/Lora-Bold.ttf');
+  }
+@font-face {
+  font-family: 'Lorenzo-Sans';
+  src: url('/Assets/fonts/Lorenzo/Lorenzo\ Sans\ Bold.ttf');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Lorenzo-Sans';
+  src: url('/Assets/fonts/Lorenzo/Lorenzo\ Sans\ Medium.ttf');
+  font-weight: medium;
+} 
+
+@font-face {
+  font-family: 'Lorenzo-Sans';
+  src: url('/Assets/fonts/Lorenzo/Lorenzo\ Sans\ Regular.ttf');
+  font-weight: thin;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Lora';
+}
+
+/*Text Sizes*/
+h1 {
+  font-size: var(--text-size-large);
+}
+h2 {
+  font-size: var(--text-size-medium);
+}
+h3 {
+  font-size: var(--text-size-small);
+}
+
+p {
+  font-family: 'Lorenzo-Sans';
+  font-weight: thin;
+}
