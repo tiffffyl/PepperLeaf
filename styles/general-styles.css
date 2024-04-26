@@ -1,19 +1,28 @@
+/* Reset */
+
+
 /*Fonts, size, colours*/
 
 :root {
     /*Colours*/
     --primary-yellow: #FFD876; 
     --secondary-yellow: #FFE7AB; 
-    --accent-primary: #34929C; 
-    --accent-secondary: #599FA4; 
+    --accent-primary: #007C89; 
+    --accent-secondary: #59A0A4; 
+    --accent-dark: #15747E; 
     --text-black: #403021;
     /*Text sizes*/
-    --text-size-large: 60px;
-    --text-size-medium: 40px; 
-    --text-size-small: 25px;
     
-  }
+    
+}
 
+  * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box; 
+    color: var(--text-black);
+  }
 
 /*Fonts*/
 @font-face {
@@ -39,11 +48,13 @@
 
 h1, h2, h3, h4 {
   font-family: 'Lora';
+  color: white;
 }
 
 /*Text Sizes*/
 h1 {
-  font-size: var(--text-size-large);
+  font-size: 64px;
+  color: var(--text-black);
 }
 h2 {
   font-size: var(--text-size-medium);
@@ -56,3 +67,21 @@ p {
   font-family: 'Lorenzo-Sans';
   font-weight: thin;
 }
+
+/*Background*/
+/* Default background image (for desktop) */
+html {
+  padding: 0;
+  margin: 0; 
+  width: 100vw;
+  height: 100vh;
+}
+body {
+  width: 100vw;
+  height: auto;
+  background-image: url('/Assets/background_desktop.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+

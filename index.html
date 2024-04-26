@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="/styles/general-styles.css">
 </head>
 <body>
-    
+    <header id="header"></header>
+    <script>
+        fetch('/includes/navigation-bar.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('header').innerHTML = html;
+                
+            });
+    </script>
+    <script src="js/state.js"></script> <!--Handles active state of elements-->
 </body>
 </html>

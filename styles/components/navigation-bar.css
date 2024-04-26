@@ -1,0 +1,104 @@
+@import url(/styles/general-styles.css);
+
+.navbar-container {
+    width: 100vw;
+    background-color: var(--primary-yellow);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-content{
+    width: 100%;
+    padding: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-links {
+    width: 40%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/*Navigation bar text links*/
+a {
+    font-family: 'Lorenzo-Sans';
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.navbar-btns {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Shopping basket button and icon styles*/
+.shopping-basket-btn {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2.5px solid var(--accent-primary);
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+.shopping-basket-icon {
+    background-image: url('/Assets/icons/shopping-basket.svg');
+    background-size: cover;
+    background-repeat: none;
+    background-position: center;
+    width: 60%;
+    height: 60%;
+}
+
+/*Order now button*/
+.order-now-btn {
+    height: 4vw;
+    width: 70%;
+    border-radius: 10vh;
+    background-color: var(--accent-primary);
+    color: white; 
+    align-content: center;
+    text-align:  center;
+    transition: transform 0.3s ease;
+}
+
+/*Animations for reactive and responsive design*/
+
+/*On hover*/
+
+a:hover {
+    color: var(--accent-primary);
+}
+
+.navbar-link::after {
+    height: 4px; 
+    width: 0;
+    display: block;
+    bottom: -10px;
+    left: 0; 
+    border-radius: 10px;;
+    background-color: var(--accent-primary);
+    content: '';
+    transition: 0.8s;
+}
+
+.navbar-link:hover:after{
+    width: 100%;
+}
+
+.navbar-btns a:hover{
+    color: var(--accent-secondary);
+    transform: translateY(-5px);
+}
+
+
+
