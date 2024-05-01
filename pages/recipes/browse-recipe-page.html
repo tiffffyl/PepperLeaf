@@ -10,14 +10,8 @@
 
 <body>
     <header id="header"></header>
-        <script>
-            fetch('/includes/navigation-bar.html')
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById('header').innerHTML = html;
-                });
-        </script>
-    </header>
+    <footer id="footer"></footer>    
     <script src="/js/state.js"></script> <!--Handles active state of elements-->
+    <script src="/js/includes.js"></script> <!--Reusable HTML & CSS elements-->
 </body>
 </html>

@@ -11,6 +11,7 @@
     --accent-secondary: #59A0A4; 
     --accent-dark: #15747E; 
     --text-black: #403021;
+    --brown: #241C15;
     /*Text sizes*/
     
     
@@ -57,10 +58,13 @@ h1 {
   color: var(--text-black);
 }
 h2 {
-  font-size: var(--text-size-medium);
+  font-size: 50px;
 }
 h3 {
   font-size: var(--text-size-small);
+}
+h4 {
+  font-size: 28px;
 }
 
 p {
