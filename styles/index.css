@@ -1,0 +1,206 @@
+@import url(/styles/general-styles.css);
+
+.body-content {
+    max-width: 100%;
+    position: relative;
+    left:0;
+    padding: 10%;
+    padding-top: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/*-------------------SECTION 1-------------------*/
+.section-one{
+    width: 100%;
+    height: 150vh; 
+    display: flex; 
+}
+
+.main-content {
+    position: relative;
+    width: 35vw;
+    display: flex; 
+    flex-direction: column;
+} 
+
+p{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size:20px;
+    width: 70%;
+}
+
+.order-now {
+    height: 4vw;
+    width: 35%;
+    font-size: 20px;
+    font-family: 'Lorenzo-sans';
+    font-weight: 900;
+    border-radius: 10vh;
+    background-color: var(--accent-primary);
+    color: white; 
+    align-content: center;
+    text-align:  center;
+}
+
+
+/*-------------------SECTION 2-------------------*/
+
+.section-two{
+    width: 100%;
+    height: 130vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.options {
+    background-color: #F4DB81;
+    width: 45vw;
+    height: 65vh;
+    padding: 2%;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 45px;
+    position: relative;
+    top: 2vh;
+    left: -13vw;
+}
+
+.options-title {
+    padding-left: 8%;
+    font-size: 30px;
+    color: var(--text-black);
+}
+
+  .row {
+    width: 90%;
+    height: 70vh;
+    padding: 20px;
+    margin-left: 5%;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+
+  .card {
+    width: 15vw;
+    height: 100%;
+    background-color: white;
+    display: inline-block;
+    padding: 0px;
+    border: none;
+    border-radius: 16px;
+    margin-left: 30px;
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 70%;
+    border-radius: 16px 16px 0px 0px;
+    overflow: hidden;
+    background-position: center center;
+  }
+  
+  
+  .card-body {
+    padding: 2%;
+    padding-left: 5%;
+    background-color: #ECECEC;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-title {
+    font-size: 25px;
+    color: var(--text-black);
+  }
+
+  .card-description {
+    padding: 0;
+  }
+
+  #scrollbar::-webkit-scrollbar {
+    height: 10px;
+  }
+  
+  #scrollbar::-webkit-scrollbar-track {
+    background-color: #D1BA6A;
+    border-radius: 10px;
+  }
+   
+  #scrollbar::-webkit-scrollbar-thumb {
+    background-color: #A5934F; 
+    border-radius: 10px;
+  }
+  
+  #scrollbar::-webkit-scrollbar-thumb:hover {
+    background: beige; 
+  }
+/*-------------------SECTION 3-------------------*/
+
+.section-three{
+    width: 100%;
+    height: 150vh;
+    display: flex;
+    align-items: center;
+}
+
+.review-text {
+    position: relative; 
+
+}
+
+.reviews {
+    width: 45vw;
+    height: 65vh;
+    background-color: #F4DB81;
+    display: flex; 
+    align-items: center;
+    border-radius: 45px 0px 0px 45px;
+    position: relative;
+    right: -9.9vw;
+    top: 11vh;
+}
+
+.reviews-description {
+    padding-left: 5%;
+}
+
+.reviews-container {
+    position: absolute;
+    width: 60vw;
+    right:5%;
+    display: flex;
+}
+
+.review-card {
+    height: 47vh;
+    width: 50vw;
+    background-color: white;
+    padding: 3%;
+    border-radius: 10px;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.stars-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.review-description {
+    width: 100%;
+    height: 80%;
+    font-size: 16px;
+    text-align: center;
+    font-family: 'Lorenzo-sans';
+}
+
+

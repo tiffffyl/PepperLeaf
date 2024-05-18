@@ -3,10 +3,12 @@
 .navbar-container {
     width: 100vw;
     background-color: var(--primary-yellow);
+    position: fixed;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    z-index: 2;
 }
 
 .navbar-content{

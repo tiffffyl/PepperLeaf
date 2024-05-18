@@ -1,8 +1,10 @@
 @import url(/styles/general-styles.css);
 
 .footer {
-    width: 100vw;
-    height: 400px;
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    left:0;
     background-color: var(--brown);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
