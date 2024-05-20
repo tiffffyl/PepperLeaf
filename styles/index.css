@@ -44,16 +44,21 @@ p{
     color: white; 
     align-content: center;
     text-align:  center;
+    transition: transform 0.3s ease;
 }
 
+.order-now:hover{
+    color: var(--accent-secondary);
+    transform: translateY(-5px);
+}
 
 /*-------------------SECTION 2-------------------*/
 
 .section-two{
-    width: 100%;
+    width: 100vw;
     height: 130vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
 }
 
@@ -98,6 +103,7 @@ p{
   }
   
   .card-image {
+    position: relative; 
     width: 100%;
     height: 70%;
     border-radius: 16px 16px 0px 0px;
@@ -164,6 +170,7 @@ p{
     position: relative;
     right: -9.9vw;
     top: 11vh;
+    z-index: 10;
 }
 
 .reviews-description {
@@ -203,4 +210,74 @@ p{
     font-family: 'Lorenzo-sans';
 }
 
+
+/*Parallax*/
+.parallax-container {
+    position: absolute;
+    width: 60%;
+    top: 20vh;
+    right: 0;
+    height: 500vh; /* Make the container tall enough to enable scrolling */
+}
+
+/*speeds*/
+
+
+.teriyaki-beef {
+    position: absolute;
+    right: -700px;
+}
+
+.teriyaki-beef-bowl {
+    position: relative;
+    top:-350px; 
+    right: 900px;
+}
+
+.sauce-dish {
+    position: relative; 
+    bottom: 50px; 
+    right: 1200px;
+    z-index: 6;
+}
+
+.beef-salad {
+    position: relative;
+    right: -110px;
+    top: 150px;
+}
+
+.beef-salad-bg {
+    position: relative;
+    z-index: 5;
+}
+
+.beef-salad-bowl {
+    position: relative;
+    top: -1155px;
+    right: 100px;
+    z-index: 6; 
+}
+
+.pasta-bowl {
+    position: relative;  
+    top: -1445px; 
+    right: -330px;
+    z-index: 6
+}
+
+.taco-plate {
+    position: absolute;
+    top: 1300px;
+    right: 400px;
+    z-index: 1;
+}
+
+.gyoza-plate {
+    position: relative;
+    height: 350px;
+    top: 800px; 
+    left: 50px;
+    z-index: 6;
+}
 
