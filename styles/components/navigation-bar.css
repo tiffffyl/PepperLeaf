@@ -4,6 +4,7 @@
     width: 100vw;
     background-color: var(--primary-yellow);
     position: fixed;
+    top: 0px;
     display: flex;
     flex-direction: row;
     align-items: center;

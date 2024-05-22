@@ -5,13 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Browse Recipes</title>
     <link rel="stylesheet" href="/styles/general-styles.css">
+    <link rel="stylesheet" href="/styles/recipes.css">
 </head>
 
-
+<header id="header"></header>
 <body>
-    <header id="header"></header>
-    <footer id="footer"></footer>    
+    
+
+    
+    <div class="body-container">
+        <h1 class="recipe-title">Recipe<br>Cookbook</h1>
+        <div class="recipe-background"></div>
+
+        
+
+    </div>
+
+    <div class="recipes">
+        
+        <div class="featured-recipes"></div>
+        
+        <div class="recipe-container" data-tags="Vegetarian"></div>
+        <div class="recipe-container" data-tags="Italian"></div>
+        <div class="recipe-container" data-tags="Healthy"></div>
+
+    </div>
+    
+    <div id="template-container" style="display: none;"></div>
+    
+    
+</body>
+<footer id="footer"></footer>    
     <script src="/js/state.js"></script> <!--Handles active state of elements-->
     <script src="/js/includes.js"></script> <!--Reusable HTML & CSS elements-->
-</body>
 </html>
