@@ -3,19 +3,24 @@
     display: flex; 
     flex-direction: column;
     justify-content: center;
-    padding: 3vh 5vw;
+    padding: 3vh 5vw 0 5vw;
     gap: 40px;
 }
 
 .recipe-background{
     background-color: #FBE4A9;
     width: 100%;
-    height: 100vh;
+    height: 140vh;
     border-radius: 25px 25px 0 0;
 }
 
 .recipe-title{
-    font-size: 100px;
+    font-size: 5.5vw;
+}
+
+.section-title{
+    color: var(--text-black);
+    padding-left: 7vw;
 }
 
 
@@ -23,32 +28,50 @@
 
 .recipes{
     position: absolute;
-    top: 50vh;
-    width: 100%;
-    left: 0;
+    top: 55vh;
+    width: 100vw;
+    height: 120vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.recipe-container{
+    height: 450px;
+    padding: 5vh 5vw;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 50px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+/*Recipe Card elements*/
+
+.recipe-card {
+    border-radius: 10px;
+    min-width: 30vw;
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.recipe-container{
-    padding: 5vh 5vw;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-
-.recipe-card {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 20px;
-    width: 200px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
 .recipe-image {
-    max-width: 100%;
-    border-radius: 10px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    height: 70%;
+    background-color: white;
+    
+}
+
+.recipe-info{
+    background-color: #34929C;
+    height: 30%;
+    border-radius: 0 0 10px 10px;
+    padding-left: 4%;
+    display: flex;
+    flex-direction: column;
 }
 
 .recipe-name {
@@ -60,13 +83,34 @@
     display: flex;
     gap: 5px;
     flex-wrap: wrap;
+    
 }
 
 .recipe-tag {
-    background-color: #eee;
+    background-color: #0F6B74;
+    color: white;
+    font-family: 'Lorenzo-sans';
+    font-weight: 100;
     border-radius: 5px;
-    padding: 5px 10px;
+    padding: 5px 15px;
     font-size: 0.8em;
 }
 
 
+#recipe-scroll::-webkit-scrollbar {
+    height: 20px;
+  }
+  
+#recipe-scroll::-webkit-scrollbar-track {
+background-color: #D1BA6A;
+border-radius: 10px;
+}
+   
+  #recipe-scroll::-webkit-scrollbar-thumb {
+    background-color: #A5934F; 
+    border-radius: 10px;
+  }
+  
+  #recipe-scroll::-webkit-scrollbar-thumb:hover {
+    background: beige; 
+  }

@@ -24,24 +24,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const recipes = [
                 {
-                    name: "Spaghetti Bolognese",
-                    image: "path/to/spaghetti.jpg",
-                    tags: ["Pasta", "Italian", "Dinner"]
+                    name: "Vegan Rabokki",
+                    image: "path/to/rabokki.jpg",
+                    tags: ["Easy", "Vegan", "Asian"]
                 },
                 {
-                    name: "Chicken Curry",
-                    image: "path/to/curry.jpg",
-                    tags: ["Chicken", "Indian", "Spicy"]
+                    name: "Chicken Laksa",
+                    image: "/Assets/recipes/chicken-laksa/chicken-laska-cover.webp",
+                    tags: ["Chicken", "Asian", "Easy"]
                 },
                 {
-                    name: "Avocado Toast",
-                    image: "path/to/avocado.jpg",
-                    tags: ["Breakfast", "Healthy", "Quick", "Vegetarian"]
+                    name: "Beef & Basil Bolognese",
+                    image: "path/to/bolognese.jpg",
+                    tags: ["Easy", "Italian"]
                 },
                 {
-                    name: "Carbonara",
-                    image: "path/to/avocado.jpg",
-                    tags: ["Italian", "Quick"]
+                    name: "Black bean & Eggplant",
+                    image: "path/to/eggplant.jpg",
+                    tags: ["Mexican", "Vegetarian"]
+                },
+                {
+                    name: "Spinach & Feta Ravioli with Zuccini",
+                    image: "path/to/ravioli.jpg",
+                    tags: ["Italian", "Vegetarian"]
+                },
+                {
+                    name: "Halloumi Burgers with Aioli Chips",
+                    image: "path/to/halloumi-burger.jpg",
+                    tags: ["Vegetarian"]
+                },
+                {
+                    name: "Teriyaki Tofu Noodle Stir-fry",
+                    image: "path/to/noodle.jpg",
+                    tags: ["Asian", "Vegetarian"]
                 }
             ];
 
