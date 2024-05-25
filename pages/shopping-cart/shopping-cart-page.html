@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Kit Subscription</title>
+    <link rel="stylesheet" href="/styles/general-styles.css">
+    <link rel="stylesheet" href="/styles/cart.css">
+</head>
+<header id="header"></header>
+<body>
+    
+    
+<div class="container">
+    
+    <div id="page1" class="page1 page active">
+        <h1>Create <br>Your Plan</h1>
+        <p class="create-plan-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tincidunt ornare massa eget egestas purus viverra accumsan in.</p>
+        <button class="start-btn" id="next-page1">
+            <p class="next-text-btn">Start</p>
+            <img src="/Assets/icons/long-arrow.svg">
+        </button>
+    </div>
+  
+    <div id="page2" class="page">
+      <h1>1. Meal Quantity</h1>
+      <p class="create-plan-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tincidunt ornare massa eget egestas purus viverra accumsan in.</p>
+      <div class="radio-group">
+        <label><input type="radio" name="meal-quantity" value="2">2</label>
+        <label><input type="radio" name="meal-quantity" value="3">3</label>
+        <label><input type="radio" name="meal-quantity" value="4">4</label>
+        <label><input type="radio" name="meal-quantity" value="5">5</label>
+      </div>
+      <button id="prev-page2">Previous</button>
+      <button id="next-page2">Next</button>
+    </div>
+  
+    <div id="page3" class="page">
+      <h1>Serving Size</h1>
+      <div class="radio-group">
+        <label><input type="radio" name="serving-size" value="1">1</label>
+        <label><input type="radio" name="serving-size" value="2">2</label>
+        <label><input type="radio" name="serving-size" value="4">4</label>
+        <label><input type="radio" name="serving-size" value="6">6</label>
+      </div>
+      <button id="prev-page3">Previous</button>
+      <button id="next-page3">Next</button>
+    </div>
+  
+    <div id="page4" class="page">
+      <h1>Select Dishes</h1>
+      <div id="dishes" class="dishes-container"></div>
+      <button id="prev-page4">Previous</button>
+      <button id="add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+  
+  <div id="cart" class="overlay">
+    <div class="cart-content">
+      <span id="close-cart">&times;</span>
+      <h2>Shopping Cart</h2>
+      <div id="cart-items"></div>
+    </div>
+  </div>
+
+
+    <script src="/js/cart.js"></script>
+    <script src="/js/state.js"></script> <!--Handles active state of elements-->
+    <script src="/js/includes.js"></script> <!--Reusable HTML & CSS elements-->
+</body>
+</html>

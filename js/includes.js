@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const recipes = [
                 {
                     name: "Vegan Rabokki",
-                    image: "path/to/rabokki.jpg",
+                    image: "/Assets/recipes/vegan-rabokki/vegan-rabokki-cover.jpg",
                     tags: ["Easy", "Vegan", "Asian"]
                 },
                 {
@@ -35,27 +35,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 {
                     name: "Beef & Basil Bolognese",
-                    image: "path/to/bolognese.jpg",
+                    image: "/Assets/recipes/beef-basil-bolognese/beef-basil-bolognese-cover.webp",
                     tags: ["Easy", "Italian"]
                 },
                 {
-                    name: "Black bean & Eggplant",
-                    image: "path/to/eggplant.jpg",
+                    name: "Tofu Dumplings with Miso Slaw",
+                    image: "/Assets/recipes/tofu-dumpling/tofu-dumpling-cover.webp",
                     tags: ["Mexican", "Vegetarian"]
                 },
                 {
                     name: "Spinach & Feta Ravioli with Zuccini",
-                    image: "path/to/ravioli.jpg",
+                    image: "/Assets/recipes/spinach-feta-ravioli/spinach-feta-ravioli-cover.webp",
                     tags: ["Italian", "Vegetarian"]
                 },
                 {
                     name: "Halloumi Burgers with Aioli Chips",
-                    image: "path/to/halloumi-burger.jpg",
+                    image: "/Assets/recipes/halloumi-burgers-chip/halloumi-burgers-chip-cover.webp",
                     tags: ["Vegetarian"]
                 },
                 {
                     name: "Teriyaki Tofu Noodle Stir-fry",
-                    image: "path/to/noodle.jpg",
+                    image: "/Assets/recipes/teriyaki-tofu-stir-fry/teriyaki-tofu-cover.webp",
                     tags: ["Asian", "Vegetarian"]
                 }
             ];
@@ -74,6 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         clone.querySelector('.recipe-image').src = recipe.image;
                         clone.querySelector('.recipe-image').alt = recipe.name;
                         clone.querySelector('.recipe-name').textContent = recipe.name;
+                        // Set the link URL
+                        clone.querySelector('.recipe-link').href = recipe.url;
 
                         const tagsContainer = clone.querySelector('.recipe-tags');
                         recipe.tags.forEach(tag => {
