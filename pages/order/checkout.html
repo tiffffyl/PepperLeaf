@@ -9,20 +9,53 @@
 </head>
 
 <body>
-    <div class="mobile-nav">
-        <p>Mobile nav</p>
-    </div>
+    
 
-    <div class="checkout-container">
-        <div class="form-container">
-            <div class="form-section input-fields-container">
-                <div class="back-btn-container hidden" id="backBtn1">
-                    <a class="back-btn" onclick="prevSection(0)">
-                        <img src="/Assets/icons/back-btn-brown.svg">
-                        <p class="back-btn-text">Back</p>
-                    </a>
+    <div class="container">
+
+        <div class="summary page active" id="summary">
+            <!--Back to Order button-->
+            <a class="back-btn desktop" href="/pages/order/steps.html">
+                <img src="/Assets/icons/back-btn-brown.svg">
+                <p>Back</p>
+            </a>
+            <h1 class="title">Checkout</h1>
+            <div class="order-summary">
+                <div class="summary-title-bar">
+                    <h2 class="title sub">Summary</h2>
+                    <div class="cost"></div>
                 </div>
-                <h1 class="checkout-title">Checkout</h1>
+                <div class="shipping-info">
+                    <h3>Shipping</h3>
+                    <h3>FREE</h3>
+                </div>
+                <div class="meal-box">
+                    <div class="meal-box-container">
+                        <div class="meal-box-ridge"></div>
+                        <div class="meal-box-bg"></div>
+                        <h3 class="meal-box-title">Meal box</h3>
+                        <div class="price-container"></div>
+                        <button class="next-btn desktop confirm">Place Order</button>
+                    </div>
+                    
+                    <p>* By clicking PLACE ORDER or Apple Pay you are purchasing a flexible subscription and will receive weekly deliveries which you can pause or cancel at any time. 
+                        There is no minimum commitment beyond the first order you are placing. 
+                        Pricing is based on your plan choices. You have read and agreed to our Terms and Conditions and Privacy Policy.</p>
+                </div>
+            </div>
+            
+            <!--Next section button-->
+            <button class="next-btn mobile" onclick="nextPage()">Next</button>
+        </div>
+        
+        <div class="delivery page" id="delivery">
+            <!--Previous Page button-->
+            <button class="back-btn mobile" onclick="prevPage()">
+                <img src="/Assets/icons/back-btn-brown.svg">
+                <p>Back</p>  
+            </button>
+            <h1 class="title">Checkout</h1>
+            <div class="delivery-information">
                 <form class="input-form">
                     <div class="top-container">
                         <div class="personal-information-fields">
@@ -30,7 +63,7 @@
                             <div class="name-field">
                                 <input type="text" id="firstName" name="firstName" placeholder="First Name* ">
                                 <input type="text" id="lastName" name="lastName" placeholder="Last Name* ">
-                            </div>
+                            </div> 
                             <div class="contact-field">
                                 <p class="field-subtitle">Contact by:</p>
                                 <input type ="radio" id="phoneRadio" name="contactMethod" value="phoneNumber" required>
@@ -45,56 +78,36 @@
                                 <input class="address-input" type="text" id="address" name="address" placeholder="Address* ">
                                 <input class="town-input" type="text" id="town" name="town" placeholder="Town/City* ">
                                 <input class="postcode-input" type="text" id="postcode" name="postcode" placeholder="Postcode* ">
-                            </div>
+                            </div> 
                         </div>
                     </div>
-                    <button type="button" onclick="nextSection(1)">Next</button>
                 </form>
             </div>
-            
-
-            <!--MOBILE PAGE INTERACTION & FLOW-->
-            <div class="form-section summary-container">
-                <div class="back-btn-container" id="backBtn3">
-                    <a class="back-btn" onclick="goBack(1)">
-                        <img src="/Assets/icons/back-btn-brown.svg">
-                        <p class="back-btn-text">Back</p>
-                    </a>
-                </div>
-                <p class="field-title">Summary:</p>
-                <!-- Summary fields go here -->
-            </div>
-            
-            <div class="form-section payment-method-container">
-                <div class="back-btn-container" id="backBtn2">
-                    <a class="back-btn" onclick="goBack(0)">
-                        <img src="/Assets/icons/back-btn-brown.svg">
-                        <p class="back-btn-text">Back</p>
-                    </a>
-                </div>
-                <p class="field-title">Payment Method:</p>
-                <div class="payment-method-fields">
-                    <!-- Payment method fields go here -->
-
-                    paymenttttt
-                </div>
-                <button type="button" onclick="nextPage(2)">Next</button>
-            </div>
-            
-            
+            <!--Next section button-->
+            <button class="next-btn mobile" onclick="nextPage()">Next</button>
+        </div>
+        
+        <div class="payment page" id="payment">
+            <!--Previous Page button-->
+            <button class="back-btn mobile" onclick="prevPage()">
+                <img src="/Assets/icons/back-btn-brown.svg">
+                <p>Back</p>  
+            </button>
+            <h1 class="title">Checkout</h1>
+            <div class="payment-information">Payment Information Page</div>
+            <!--Place Order button-->
+            <button class="next-btn mobile confirm">Place Order</button>
         </div>
     </div>
 
 
-    
 
     
-
 
 
     
 </body>
-    <script src="/js/cart.js"></script>
+    
     <script src="/js/state.js"></script> <!--Handles active state of elements-->
     <script src="/js/checkout.js"></script>
 </html>
