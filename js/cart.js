@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
 
     async function updateDishes() {
-        //Max dishes user can select
-        const maxQuantity = document.querySelector('input[name="meal-quantity"]:checked').value;
+        //Max & min dishes user can select
+        const quantity = document.querySelector('input[name="meal-quantity"]:checked').value;
         
         const recipeContainer = document.getElementById('recipe-scroll');
         recipeContainer.innerHTML = '';
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
             recipeLink.addEventListener('click', function(event) {
                 event.preventDefault();
                 
-                if (checkedCount < maxQuantity || checkbox.checked) {
+                if (checkedCount < quantity || checkbox.checked) {
                     checkbox.checked = !checkbox.checked;
                     recipeLink.classList.toggle('selected', checkbox.checked);
                     recipeImage.classList.toggle('dimmed', checkbox.checked);
@@ -131,8 +131,18 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
-    // Initial update of displayed checked items
-    updateCheckedItems();
+        // Initial update of displayed checked items
+        updateCheckedItems();
+
+        //event listerner to preven user from selecting too few dishes
+        document.getElementById('add-to-cart').addEventListener('click', function(event) {
+            if (checkedCount < quantity) {
+                event.preventDefault();
+                alert(`Please select at least ${quantity} dishes.`);
+            } else {
+                window.location.href = '/pages/order/checkout.html'; 
+            }
+        });
         
     }
 
@@ -197,6 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function addToCart() {
+        
         updateLocalStorage();
         cartOverlay.style.display = 'block';
     }
@@ -212,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     updateCartDisplay();
 
-    // Manages the page slideshow
+    //Manages the page slideshow
     const pages = document.querySelectorAll('.page');
     const nextPageButtons = document.querySelectorAll('[id^=next]');
     const prevPageButtons = document.querySelectorAll('[id^=prev]');
@@ -245,78 +256,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Load dish selection checkboxes
-    // Fetch the external HTML template for recipes
-    function updateDishesAndRecipes() {
-        dishesContainer.innerHTML = '';
-        
-        // Fetch the external HTML template for recipes
-        fetch('/includes/recipe/recipe-card.html')
-            .then(response => response.text())
-            .then(data => {
-                // Insert the template into the placeholder
-                document.getElementById('template-container').innerHTML = data;
     
-                const containers = document.querySelectorAll('.recipe-container');
-                const template = document.getElementById('recipe-card-template').content;
-    
-                containers.forEach(container => {
-                    const containerTags = container.getAttribute('data-tags').split(',').map(tag => tag.trim());
-    
-                    recipes.forEach((recipe, index) => {
-                        if (recipe.tags.some(tag => containerTags.includes(tag))) {
-                            const clone = document.importNode(template, true);
-    
-                            // Set the image, name, and tags
-                            clone.querySelector('.recipe-image').src = recipe.image;
-                            clone.querySelector('.recipe-image').alt = recipe.name;
-                            clone.querySelector('.recipe-name').textContent = recipe.name;
-                            const tagsContainer = clone.querySelector('.recipe-tags');
-                            recipe.tags.forEach(tag => {
-                                const tagElement = document.createElement('span');
-                                tagElement.classList.add('recipe-tag');
-                                tagElement.textContent = tag;
-                                tagsContainer.appendChild(tagElement);
-                            });
-    
-                            // Create and insert the checkbox
-                            const recipeDiv = document.createElement('div');
-                            recipeDiv.classList.add('recipe-checkbox');
-
-                            const checkbox = document.createElement('input');
-                            checkbox.type = 'checkbox';
-                            checkbox.id = `recipe${index}`;
-                            checkbox.name = 'recipe';
-                            checkbox.value = recipe.name;
-    
-                                                       
-                            
-                            
-                            
-                            recipeDiv.appendChild(checkbox);
-                            recipeDiv.appendChild(clone);
-                            dishesContainer.appendChild(recipeDiv);
-    
-                            // Add event listener to toggle checkbox
-                            const recipeLink = recipeDiv.querySelector('.recipe-link');
-                            recipeLink.addEventListener('click', function(event) {
-                                event.preventDefault();
-                                checkbox.checked = !checkbox.checked;
-                                recipeLink.classList.toggle('selected', checkbox.checked);
-                            });
-    
-                            
-                        }
-                        
-                    });
-                });
-            })
-            .then(() => {
-                const quantity = document.querySelector('input[name="meal-quantity"]:checked').value;
-                limitCheckboxSelection(quantity);
-            })
-            .catch(error => console.error('Error fetching the template:', error));
-            //Limits the number of checkboxes allowed
-              
-    }
 });
