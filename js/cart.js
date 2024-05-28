@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const dishesContainer = document.getElementById('dishes');
     const addToCartButton = document.getElementById('add-to-cart');
     const cartOverlay = document.getElementById('cart');
-    const cartItemsContainer = document.getElementById('cart-items');
     const closeCartButton = document.getElementById('close-cart');
 
     // Define the recipes array with name, image, and tags
@@ -109,12 +108,12 @@ document.addEventListener('DOMContentLoaded', function() {
             itemCountElement.textContent = `${selectedCount}/${maxSelection}`;
 
 
-            // Display each checked item
+            //Displays each checked item
             checkedItems.forEach((itemName, index) => {
                 const itemDiv = document.createElement('div');
                 itemDiv.classList.add('checked-item');
 
-                // Append image
+                //Append image url
                 const itemImage = document.createElement('img');
                 itemImage.classList.add('checked-item-image');
                 const recipe = recipes.find(recipe => recipe.name === itemName);
@@ -146,25 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
     }
 
-    function limitCheckboxSelection(limit) {
-        const checkboxes = document.querySelectorAll('input[name="recipe"]');
-        checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', function() {
-                const selectedCount = document.querySelectorAll('input[name="recipe"]:checked').length;
-                if (selectedCount >= limit) {
-                    checkboxes.forEach(box => {
-                        if (!box.checked) {
-                            box.disabled = true;
-                        }
-                    });
-                } else {
-                    checkboxes.forEach(box => {
-                        box.disabled = false;
-                    });
-                }
-            });
-        });
-    }
+    
 
     function updateLocalStorage() {
         const selectedServingSize = document.querySelector('input[name="serving-size"]:checked').value;

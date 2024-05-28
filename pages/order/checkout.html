@@ -12,7 +12,6 @@
     
 
     <div class="container">
-
         <div class="summary page active" id="summary">
             <!--Back to Order button-->
             <a class="back-btn desktop" href="/pages/order/steps.html">
@@ -29,23 +28,27 @@
                     <h3>Shipping</h3>
                     <h3>FREE</h3>
                 </div>
+                
                 <div class="meal-box">
                     <div class="meal-box-container">
                         <div class="meal-box-ridge"></div>
-                        <div class="meal-box-bg"></div>
+                        <div class="meal-box-bg">
+                            <div class="summary-item-container" id="recipeContainer"></div>
+                        </div>
                         <h3 class="meal-box-title">Meal box</h3>
-                        <div class="price-container"></div>
-                        <button class="next-btn desktop confirm">Place Order</button>
+                        <div class="price-container">
+                            <p id="priceContainer"></p>
+                        </div>
+                        <button class="next-btn desktop confirm" onclick="validate()">Place Order</button>
                     </div>
-                    
-                    <p>* By clicking PLACE ORDER or Apple Pay you are purchasing a flexible subscription and will receive weekly deliveries which you can pause or cancel at any time. 
+                    <p class="terms-condition">* By clicking PLACE ORDER or Apple Pay you are purchasing a flexible subscription and will receive weekly deliveries which you can pause or cancel at any time. 
                         There is no minimum commitment beyond the first order you are placing. 
-                        Pricing is based on your plan choices. You have read and agreed to our Terms and Conditions and Privacy Policy.</p>
+                        Pricing is based on your plan choices. You have read and agreed to our Terms and Conditions and Privacy Policy.</p>
                 </div>
             </div>
             
             <!--Next section button-->
-            <button class="next-btn mobile" onclick="nextPage()">Next</button>
+            <button class="next-btn summary-page mobile" onclick="nextPage()">Next</button>
         </div>
         
         <div class="delivery page" id="delivery">
@@ -56,20 +59,30 @@
             </button>
             <h1 class="title">Checkout</h1>
             <div class="delivery-information">
-                <form class="input-form">
+                <form class="input-form" id="personalInfoForm">
                     <div class="top-container">
                         <div class="personal-information-fields">
                             <p class="field-title">Personal information:</p>
                             <div class="name-field">
-                                <input type="text" id="firstName" name="firstName" placeholder="First Name* ">
-                                <input type="text" id="lastName" name="lastName" placeholder="Last Name* ">
+                                <input type="text" id="firstName" name="firstName" placeholder="First Name* " required>
+                                <input type="text" id="lastName" name="lastName" placeholder="Last Name* " required>
                             </div> 
+                            <p class="field-subtitle">Contact by:</p>
                             <div class="contact-field">
-                                <p class="field-subtitle">Contact by:</p>
-                                <input type ="radio" id="phoneRadio" name="contactMethod" value="phoneNumber" required>
-                                <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone Number* ">
-                                <input type ="radio" id="emailRadio" name="contactMethod" value="email" required>
-                                <input type="text" id="email" name="email" placeholder="Email* ">
+                                <div class="contact-container">
+                                    <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone Number*" required>    
+                                    <label class="checkbox" for="phoneRadio">
+                                        <input type="radio" id="phoneRadio" name="contactMethod" value="phoneNumber" required>
+                                        <span class="custom-radio"></span>
+                                    </label>
+                                </div>
+                                <div class="contact-container email">
+                                    <input type="text" id="email" name="email" placeholder="Email*" required>
+                                    <label class="checkbox" for="emailRadio">
+                                        <input type="radio" id="emailRadio" name="contactMethod" value="email" required>
+                                        <span class="custom-radio"></span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                         <div class="delivery-details-fields">
@@ -109,54 +122,45 @@
                     <!--Container for payment methods-->
                     <div class="payment-method-container">
                         <div class="payment-method" id="method1">
-                            <form class="payment-form">
+                            <form class="payment-form" id="paymentMethodForm">
                                 <div class="card-input-field">
-                                    <input class="payment-input cardholder-name" type="text" id="cardholder-name" name="cardholder-name" placeholder="Cardholder name " required>
-                                    <input class="payment-input card-number" type="text" id="card-number" name="card-number" placeholder="Card Number " required>
+                                    <input class="payment-input cardholder-name" type="text" id="cardholder-name" name="cardholder-name" placeholder="Cardholder name" required>
+                                    <input class="payment-input card-number" type="text" id="card-number" name="card-number" placeholder="Card Number" required maxlength="19" pattern="\d*">
                                     <div>
-                                        <input class="payment-input expiry" type="text" id="expiry" name="expiry" placeholder="Expiry Date " required>
-                                        <input class="payment-input cvv" type="text" id="cvv" name="cvv" placeholder="CVV " required>
+                                        <input class="payment-input expiry" type="text" id="expiry" name="expiry" placeholder="Expiry Date (MM/YY)" required maxlength="5" pattern="\d{2}/\d{2}">
+                                        <input class="payment-input cvv" type="text" id="cvv" name="cvv" placeholder="CVV" required maxlength="3" pattern="\d*">
                                     </div>
                                 </div>
         
                                 <div class="credit-card">
                                     <img class="card-img" src="/Assets/icons/credit-card.svg">
                                     <div class="input-display">
-                                        <p class="input-display cardholder-name bold"></p>
+                                        <p class="input-display card-number bold"></p>
                                         <div>
-                                            <p class="input-display card-number light"></p>
+                                            <p class="input-display cardholder-name light"></p>
                                             <p class="input-display expiry light"></p>
-                                            <p class="input-display cvv light"></p>
                                         </div>
                                     </div>
                                 </div>
                             </form>
                         </div>
-                        <div class="payment-method" id="method2">
-                            <!-- HTML elements for payment method 2 -->
-                            Payment Method 2 Content
+                        <div class="payment-method other" id="method2">
+                            <p>Apple pay not available</p>
                         </div>
-                        <div class="payment-method" id="method3">
-                            <!-- HTML elements for payment method 3 -->
-                            Payment Method 3 Content
+                        <div class="payment-method other" id="method3">
+                            <p>Google pay not available</p>
                         </div>
-                        <div class="payment-method" id="method4">
-                            <!-- HTML elements for payment method 4 -->
-                            Payment Method 4 Content
+                        <div class="payment-method other" id="method4">
+                            <p>PayPal also not available :(</p>
                         </div>
                     </div>
-                    
-
                 </div>
             </div>
             <!--Place Order button-->
-            <button class="next-btn mobile confirm">Place Order</button>
+            <button class="next-btn mobile confirm" onclick="validate()">Place Order</button>
         </div>
     </div>
 
-
-
-    
 
 
     
