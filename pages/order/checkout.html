@@ -75,9 +75,9 @@
                         <div class="delivery-details-fields">
                             <p class="field-title">Delivery details:</p>
                             <div class="address-field">
-                                <input class="address-input" type="text" id="address" name="address" placeholder="Address* ">
-                                <input class="town-input" type="text" id="town" name="town" placeholder="Town/City* ">
-                                <input class="postcode-input" type="text" id="postcode" name="postcode" placeholder="Postcode* ">
+                                <input class="address-input" type="text" id="address" name="address" placeholder="Address* " required>
+                                <input class="town-input" type="text" id="town" name="town" placeholder="Town/City* " required>
+                                <input class="postcode-input" type="text" id="postcode" name="postcode" placeholder="Postcode* " required>
                             </div> 
                         </div>
                     </div>
@@ -94,7 +94,61 @@
                 <p>Back</p>  
             </button>
             <h1 class="title">Checkout</h1>
-            <div class="payment-information">Payment Information Page</div>
+            <div class="payment-information">
+                <p class="field-title">Payment Method:</p>
+                <div class="payment-container">
+                    <!--Payment Method slider bar-->
+                    <div class="payment-method-slider">
+                        <div class="slider-bg">
+                            <label for="method1"><input type="radio" id="method1" name="paymentMethod" onclick="changePaymentMethod(1)">Credit/Debit card</label>
+                            <label for="method2"><input type="radio" id="method2" name="paymentMethod" onclick="changePaymentMethod(2)">Apple Pay</label>
+                            <label for="method3"><input type="radio" id="method3" name="paymentMethod" onclick="changePaymentMethod(3)">Google Pay</label>
+                            <label for="method4"><input type="radio" id="method4" name="paymentMethod" onclick="changePaymentMethod(4)">PayPal</label>
+                        </div>
+                    </div>
+                    <!--Container for payment methods-->
+                    <div class="payment-method-container">
+                        <div class="payment-method" id="method1">
+                            <form class="payment-form">
+                                <div class="card-input-field">
+                                    <input class="payment-input cardholder-name" type="text" id="cardholder-name" name="cardholder-name" placeholder="Cardholder name " required>
+                                    <input class="payment-input card-number" type="text" id="card-number" name="card-number" placeholder="Card Number " required>
+                                    <div>
+                                        <input class="payment-input expiry" type="text" id="expiry" name="expiry" placeholder="Expiry Date " required>
+                                        <input class="payment-input cvv" type="text" id="cvv" name="cvv" placeholder="CVV " required>
+                                    </div>
+                                </div>
+        
+                                <div class="credit-card">
+                                    <img class="card-img" src="/Assets/icons/credit-card.svg">
+                                    <div class="input-display">
+                                        <p class="input-display cardholder-name bold"></p>
+                                        <div>
+                                            <p class="input-display card-number light"></p>
+                                            <p class="input-display expiry light"></p>
+                                            <p class="input-display cvv light"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="payment-method" id="method2">
+                            <!-- HTML elements for payment method 2 -->
+                            Payment Method 2 Content
+                        </div>
+                        <div class="payment-method" id="method3">
+                            <!-- HTML elements for payment method 3 -->
+                            Payment Method 3 Content
+                        </div>
+                        <div class="payment-method" id="method4">
+                            <!-- HTML elements for payment method 4 -->
+                            Payment Method 4 Content
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
             <!--Place Order button-->
             <button class="next-btn mobile confirm">Place Order</button>
         </div>
