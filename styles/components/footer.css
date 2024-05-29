@@ -44,6 +44,7 @@
     display: flex; 
     width: 60%;
     justify-content: space-evenly;
+    flex: 1 1 100%;
 }
 
 .link-section {
@@ -81,4 +82,64 @@
     border-color: white;
     background-color: var(--brown);
     font-family: 'Lorenzo-Sans';
+}
+
+@media screen and (max-width: 600px){
+    .footer {
+        height: 950px;
+        padding: 20px 20px 5px 20px;
+    }
+    
+    .footer-container {
+        height: 100%;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .footer-container p {
+        font-size: 15px; 
+    }
+        
+    .footer-content {
+        height: 100%;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .left-container {
+        width: 100%;
+        height: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap: 10px;
+    }
+    
+    .links-container {
+        display: flex;
+        flex-direction: column; 
+        width: 100%;
+        justify-content: space-evenly;
+    }
+    
+    .newsletter-container{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap: 10px;
+    }
+    
+    .newletter-container h4 {
+        font-size: 15px;
+    }
+    .newsletter-container p {
+        width: 80%;
+        padding: 0;
+    }
+    
+    .newsletter-input {
+        width: 100%;
+    }  
 }

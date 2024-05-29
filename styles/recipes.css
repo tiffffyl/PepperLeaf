@@ -96,21 +96,78 @@
     font-size: 0.8em;
 }
 
-
+/*Scrollbar styling*/
 #recipe-scroll::-webkit-scrollbar {
     height: 20px;
   }
   
 #recipe-scroll::-webkit-scrollbar-track {
-background-color: #D1BA6A;
-border-radius: 10px;
+    background-color: #D1BA6A;
+    border-radius: 10px;
 }
    
-  #recipe-scroll::-webkit-scrollbar-thumb {
+#recipe-scroll::-webkit-scrollbar-thumb {
     background-color: #A5934F; 
     border-radius: 10px;
-  }
+}
   
-  #recipe-scroll::-webkit-scrollbar-thumb:hover {
+#recipe-scroll::-webkit-scrollbar-thumb:hover {
     background: beige; 
-  }
+}
+
+@media screen and (max-width: 600px){
+    .body-container{
+        height: 150vh;
+        margin-top: 10vh;
+        gap: 20px;
+    }
+    
+    .recipe-container{
+        height: 500px;
+        padding: 2vh 3vw;
+    }
+
+    .recipes{
+        top: 29vh;
+        gap: 30px;
+
+    }
+    .section-title{
+        padding-left: 45px;
+    }
+    .recipe-title{
+        font-size: 50px;
+        padding-left: 20px;
+    }
+
+    /*Recipe card elements*/
+    .recipe-card {
+        border-radius: 10px;
+        width: 70vw;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .recipe-info{
+        padding: 0 0 15px 20px;
+        justify-content: space-between;
+    }
+    
+    .recipe-name {
+        font-size: 23px;
+        margin: 10px 0;
+    }
+    
+    
+    .recipe-tag {
+        padding: 5px 20px;
+        font-size: 13px;
+    }
+
+
+    #recipe-scroll::-webkit-scrollbar {
+        height: 15px;
+      }
+      
+}

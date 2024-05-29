@@ -87,3 +87,12 @@ body {
   background-position: top center;
 }
 
+@media  screen and (max-width: 600px) {
+  body {
+    background-image: url('/Assets/background_mobile.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+  }
+  
+}

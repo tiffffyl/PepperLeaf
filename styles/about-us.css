@@ -1,0 +1,186 @@
+/*Section sizes*/
+.section{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+
+
+/*Text sizes*/
+
+.title{
+    font-size: 50px;
+}
+
+.sub-text{
+    font-size: 20px;    
+}
+
+.text-content{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/*SECTION 1*/
+.section.one{
+    display: flex;
+    align-items: center;
+    padding: 5vw 5vw 5vw;
+    justify-content: space-between;
+}
+
+.text-content.s1{
+    padding: 10% 0 0 5%;
+}
+
+.illustation-content.s1{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    padding-top: 10%;/*Move illustration down a bit*/
+}
+
+.illustration.s1 {
+    width: 80%;
+    height: auto;
+}
+
+
+/*SECTION 2*/
+.section.two{
+    display: flex;
+    align-items: center;
+    padding: 5vw;
+    justify-content: space-between;
+}
+
+.text-content.s2{
+    margin-top: 10%;
+}
+
+/*SECTION 3*/
+.section.three{
+    display: flex;
+    align-items: center;
+    padding: 5vw;
+    justify-content: space-between;
+}
+
+.text-content.s3{
+    display: flex;
+    gap: 50%;
+}
+
+.text-2{
+    padding-left: 10%;
+}
+
+.illustration.s3 {
+    width: 80%;
+    height: auto;
+}
+
+
+/*Parallax content*/
+
+/*Container*/
+.parallax-container{
+    width: 100vw;
+    height: 300vh;
+    position: absolute;
+    margin:0;
+    padding: 0;
+    z-index: 2;
+    overflow-x: hidden;
+}
+/*Positioning parallax items*/
+.parallax-container img{
+    position: relative;
+}
+/*Individual positioning*/
+.noodle-bowl{
+    top: 45vh;
+    left: 40vw;
+}
+
+.taco-plate{
+    top: 60vh;
+    left: 65vw;
+}
+
+.states{
+    top: 170vh;
+    left:-40vw; 
+}
+
+/*Mobile screen*/
+@media  screen and (max-width: 600px) {
+    .parallax-container img{
+        width: 40%;
+    }
+    
+    .illustration{
+        width: 80vw !important;
+        height: auto;
+    }
+
+    .text-content.s1{
+        width: 70%;
+        padding: 0;
+        margin-bottom: 50%;
+    }
+    .illustation-content.s1{
+        width: 30%;
+        margin-top: 10%;
+    }
+
+    .section.two{
+        padding: 10vw;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
+    .text-content.s2{
+        width: 90%;
+    }
+    .illustration.s2{
+        display: none;
+    }
+    .section.three{
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
+    .text-content.s3{
+        width: 90%;
+        gap: 20px;
+    }
+    .text-2{
+        padding: 0;
+    }
+    .title.desktop{
+        display: none;
+    }
+    .illustration.s3{
+        display: none;
+    }
+    /*Text sizes*/
+
+    .title{
+        font-size: 30px;
+    }
+
+    .sub-text{
+        font-size: 12px;    
+    }
+
+    .text-content{
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}

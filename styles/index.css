@@ -1,5 +1,9 @@
 @import url(/styles/general-styles.css);
 
+body {
+    width: 100vw;
+    overflow-x: hidden; 
+}
 
 .body-content {
     max-width: 100%;
@@ -282,3 +286,241 @@ p{
     z-index: 6;
 }
 
+
+@media screen and (max-width: 680px){
+    /*Scrolling & screen*/
+    html, body{
+        overflow-x: hidden;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    
+
+    /*TEXT*/
+    .main-title{
+        font-size: 35px;
+    }
+
+    /*Containers*/
+    .section-one{
+        width: 150vw;
+        height: 100vh;
+    }
+    .main-content{
+        width: 70%;
+    }
+    .main-content p{
+        width: 37vw;
+        font-size:12px;
+        padding-top: 10px;
+    }
+
+    .order-now {
+        height: 5vh;
+        width: 35%;        
+    }
+    
+    
+    .parallax-container {
+        position: absolute;
+        width: 60%;
+        top: 20vh;
+        right: 0;
+        height: 500vh; /* Make the container tall enough to enable scrolling */
+    }
+
+    /*Section 2*/
+    .section-two{
+        width: 100vw;
+        height: 130vh;
+        z-index: 10;
+        position: relative;
+        flex-direction: column;
+    }
+    .section-two-content{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        
+    }
+
+    .section-two .main-content {
+        width: 70vw;
+    }
+    .section-two .main-content p{
+        width: 75vw;
+    }
+    
+    .options {
+        width: 110vw;
+        height: 40vh;
+        padding: 2%;
+        position: relative;
+        left: -77px;
+        border-radius: 0;
+    }
+    
+    .options-title {
+        padding-left: 8%;
+        font-size: 30px;
+    }
+    
+    .row {
+        width: 100vw;
+        height: 100%;
+        padding: 20px;
+    }
+
+    .card {
+        width: 50vw;
+        height: 100%;
+    }
+
+    #scrollbar::-webkit-scrollbar {
+        height: 10px;
+    }
+    
+    /*Serction 3*/
+    .section-three{
+        width: 100vw;
+        height: 70vh;
+        display: flex;
+        z-index: 10;
+        position: relative;
+        flex-direction: column;
+    }
+
+    .section-three-content{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        
+    }
+
+    .section-three .main-content {
+        width: 70vw;
+    }
+    .section-three .main-content p{
+        width: 75vw;
+    }
+    
+    .review-text {
+        position: relative; 
+        right: 50px;
+    }
+    
+    .reviews {
+        width:110vw;
+        height: 40vh;
+        background-color: #F4DB81;
+        display: flex; 
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 0px;
+        position: relative;
+        z-index: 10;
+        right: 40px;
+        top: 0;
+    }
+    
+    .reviews-description {
+        padding-left: 5%;
+    }
+    
+    .reviews-container {
+        width: 100vw;
+        right: 25px;
+        gap:10px;
+        padding-bottom: 20px;
+        overflow-x: scroll;
+        white-space: nowrap;
+    }
+    
+    .review-card {
+        height: 32vh;
+        width: 60vw;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .review-description {
+        width: 50vw;
+        text-wrap: wrap;
+        height: 80%;
+        font-size: 16px;
+        text-align: center;
+        font-family: 'Lorenzo-sans';
+    }
+
+    .reviews-description.main{
+        padding: 0 0 20px 0;
+    }
+    
+    /*speeds*/
+    .teriyaki-beef {
+        width: 100%;
+        position: absolute;
+    }
+    
+    .teriyaki-beef-bg {
+        height: 305px;
+        position: relative;
+        top:100px; 
+        right: 400px;
+    }
+    .teriyaki-beef-bowl {
+        width: 150px;
+        position: relative;
+        top:-18px; 
+        right: 710px;
+    }
+    
+    
+    .sauce-dish {
+        height: 72px;
+        position: relative; 
+        bottom: 17px; 
+        right: 435px;
+        z-index: 6;
+    }
+    
+    .beef-salad {
+        position: relative;
+        right: -110px;
+        top: 150px;
+    }
+    
+    .beef-salad-bg {
+        display: none;
+        position: relative;
+        z-index: 5;
+    }
+    
+    .beef-salad-bowl {
+        display: none;
+    }
+    
+    .pasta-bowl {
+        height: 233px;
+        position: relative;  
+        top: -1500px; 
+        right: -100px;
+    }
+    
+    .taco-plate {
+        height: 311px;
+        position: absolute;
+        top: -1800px;
+        right: 200px;
+    }
+    
+    .gyoza-plate {
+        height: 127px;
+        top: 20px; 
+        left: -180px;
+        z-index: 6;
+    }
+}

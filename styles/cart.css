@@ -1,8 +1,9 @@
 @import url(/styles/general-styles.css);
 
-html {
-    overflow-y: hidden; /*prevents vertical scrolling */
-  }
+body {
+    width: 100vw;
+    overflow-x: hidden; 
+}
 
 .container {
     display: flex;
@@ -16,35 +17,19 @@ html {
     width: 60%;
 }
 
-.cart-overlay {
-    width: 30%;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: white;
-    border: 1px solid #ccc;
-    padding: 20px;
-    display: none;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+/*Starting page*/
+.start-order{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-#cart {
-    display: none; /* Remove this line to hide cart initially */
-}
-
-#dishes div {
-    margin-bottom: 5px;
-}
-
-#cart-items div {
-    margin-bottom: 10px;
-}
-
+/*Inactive page/section*/
 .page {
     display: none;
     
 }
-  
+/*Active page/secton*/
 .page.active {
     display: block;
     height: 100vh;
@@ -139,7 +124,7 @@ html {
     align-items: center;
     overflow: hidden;
     border: 5px solid #796851;
-    border-radius: 20px; /* Apply border-radius to the border */
+    border-radius: 20px; 
 }
 
 /*Each radio option selection*/
@@ -179,7 +164,7 @@ input[type="radio"] {
 .radio-option input[type="radio"]:checked + label {
     background-color: var(--accent-primary);
     color: white;
-    border: 5px solid #796851;
+    border: 5px solid var(--accent-primary);
 }
 
 
@@ -375,4 +360,117 @@ background: beige;
 }
 
 
+/*Mobile screen size*/
+
+@media screen and (max-width: 600px){
+    
+    .container{
+        overflow-x: hidden;
+    }
+    .start-order{
+        margin-top: 5vh;
+    }
+    .create-plan-desc{
+        width: 70vw;
+    }
+
+    /*Resize & position navbar*/
+    .nav-timeline{
+        position: fixed;
+        left:-20vw;
+        top: 10vh;
+    }
+    .nav-timeline img{
+        width: 95vw;
+    }
+    .page{
+        margin-top: 10vh;
+    }
+    
+    .selection-container{
+        width: 100%;
+        flex-direction: column;
+        gap: 30px;
+        align-items: start;
+    }
+
+    /*Style for Radio buttons for serving size and meal quantity selection*/
+    .radio-group {
+        height: 70px;
+        width: 100%;
+        border-radius: 15px; 
+    }
+    
+    
+    .recipe-container-order-page{
+        height: 45vh;
+        width: 100%;
+        display: flex;
+        overflow-x: scroll;
+    }
+
+
+    .selection-side-bar{
+        width: 100%;
+        height: 75vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .selection-side-bar-title {
+        position: absolute;
+    }
+    
+
+    .selection{
+        position: absolute;
+        top: 30vh;
+        flex-direction: column;
+        gap: 2vw;
+        width: 100vw;
+        gap: 50px;
+        padding: 20px;
+        background-color: #FFD058;
+    }
+    .dish-selection{
+        width: 100%;
+    }
+    .dish-selection h1{
+        font-size: 50px;
+    }
+
+    .recipe-card {
+        min-width: 0px;
+        width: 65vw;
+        height: 40vh;
+    }
+
+    .recipe-info{
+        padding: 0 20px 20px 20px;
+        justify-content: space-between;
+    }
+
+    .recipe-name {
+        font-size: 20px;
+    }
+
+
+    /*Scrollbar styles*/
+    #recipe-scroll::-webkit-scrollbar {
+        height: 10px;
+    }
+    
+
+    /*Dish selection Display*/
+    .checked-items {
+        margin-top: 8vh;
+    }
+
+    .checked-items::-webkit-scrollbar {
+        width: 10px;
+    }
+    
+
+}
 
