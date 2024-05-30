@@ -21,16 +21,47 @@
             <a class="navbar-link" id="recipeLink" href="/pages/recipes/browse-recipe-page.html">Recipes</a>
             <a class="navbar-link" id="aboutUsLink" href="/pages/about-us-page.html">About Us</a>
             <div class="navbar-btns">
-                <a class="shopping-basket-btn" href="/pages/shopping-cart/shopping-cart-page.html">
+                <button class="shopping-basket-btn" id="open-cart" onclick="toggleCart()">
                     <div class="shopping-basket-icon"></div>
-                </a>
+                </button>
                 <a class="order-now-btn" href="/pages/order/order-page.html">Order now</a>
         </div>
         </div>
     </div>
-   
+    <div class="overlay" id="cart-overlay">
+        <div class="cart">
+            <div class="cart-top-bar">
+                <button class="close-btn" onclick="toggleCart()">
+                    <img class="close-btn" id="close-cart" src="/Assets/icons/close-5.svg"/>
+                </button>
+                <h2 class="cart-title">Your Plan</h2>
+            </div>
+            <div class="plan-detail-container">
+                <div class="plan-detail-text">
+                    <h3>Serving: </h3>
+                    <h3 class="serving-size"></h3>
+                </div>
+                <div class="plan-detail-text">
+                    <h3>Meal quantity: </h3>
+                    <h3 class="meal-serving"></h3>
+                </div>
+            </div>
+            <div class="item-container">
+                <div class="plan-detail-text">
+                    <h3>Your selected dishes:</h3>
+                    <h3 class="dish-quantity"></h3>
+                </div>
+                <div class="item-container" id="dishContainer">
+                    Function does not work, please check report :)
+                </div>
+            </div>
+            <div class="centerer">
+                <a href="/pages/order/steps.html" class="check-out-btn">Checkout now</a>
+            <div>
+        </div>
+    </div>
 </header>
-<script src="/js/state.js"></script> <!--Handles active state of elements-->
-</body>
 
+</body>
+    <script src="/js/state.js"></script> <!--Handles active state of elements-->
 </html>

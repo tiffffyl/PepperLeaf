@@ -1,14 +1,5 @@
-//Recipes
-const recipes = [
-    { name: "Vegan Rabokki", image: "/Assets/recipes/vegan-rabokki/vegan-rabokki-cover.jpg", tags: ["Easy", "Vegan", "Asian"] },
-    { name: "Chicken Laksa", image: "/Assets/recipes/chicken-laksa/chicken-laska-cover.webp", tags: ["Chicken", "Asian", "Easy"] },
-    { name: "Beef & Basil Bolognese", image: "/Assets/recipes/beef-basil-bolognese/beef-basil-bolognese-cover.webp", tags: ["Easy", "Italian"] },
-    { name: "Tofu Dumplings with Miso Slaw", image: "/Assets/recipes/tofu-dumpling/tofu-dumpling-cover.webp", tags: ["Mexican", "Vegetarian"] },
-    { name: "Spinach & Feta Ravioli with Zuccini", image: "/Assets/recipes/spinach-feta-ravioli/spinach-feta-ravioli-cover.webp", tags: ["Italian", "Vegetarian"] },
-    { name: "Halloumi Burgers with Aioli Chips", image: "/Assets/recipes/halloumi-burgers-chip/halloumi-burgers-chip-cover.webp", tags: ["Vegetarian"] },
-    { name: "Teriyaki Tofu Noodle Stir-fry", image: "/Assets/recipes/teriyaki-tofu-stir-fry/teriyaki-tofu-cover.webp", tags: ["Asian", "Vegetarian"] }
-];
-
+//Importing recipes from recipe js page
+import { recipes } from '/js/recipes.js';
 
 //Page/section selection
 let currentPage = 0;

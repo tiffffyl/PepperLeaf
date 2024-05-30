@@ -1,9 +1,16 @@
+//Importing recipes from recipe js page
+import { recipes } from '/js/recipes.js';
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     // Fetch and insert the navigation bar
     fetch('/includes/navigation-bar.html')
         .then(response => response.text())
         .then(html => {
             document.getElementById('header').innerHTML = html;
+            // Call loadDishes function after inserting the template
+            
         })
         .catch(error => console.error('Error fetching the navigation bar:', error));
 
@@ -21,45 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             // Insert the template into the placeholder
             document.getElementById('template-container').innerHTML = data;
-
-            const recipes = [
-                {
-                    name: "Vegan Rabokki",
-                    image: "/Assets/recipes/vegan-rabokki/vegan-rabokki-cover.jpg",
-                    tags: ["Easy", "Vegan", "Asian"]
-                },
-                {
-                    name: "Chicken Laksa",
-                    image: "/Assets/recipes/chicken-laksa/chicken-laska-cover.webp",
-                    tags: ["Chicken", "Asian", "Easy"]
-                },
-                {
-                    name: "Beef & Basil Bolognese",
-                    image: "/Assets/recipes/beef-basil-bolognese/beef-basil-bolognese-cover.webp",
-                    tags: ["Easy", "Italian"]
-                },
-                {
-                    name: "Tofu Dumplings with Miso Slaw",
-                    image: "/Assets/recipes/tofu-dumpling/tofu-dumpling-cover.webp",
-                    tags: ["Mexican", "Vegetarian"]
-                },
-                {
-                    name: "Spinach & Feta Ravioli with Zuccini",
-                    image: "/Assets/recipes/spinach-feta-ravioli/spinach-feta-ravioli-cover.webp",
-                    tags: ["Italian", "Vegetarian"]
-                },
-                {
-                    name: "Halloumi Burgers with Aioli Chips",
-                    image: "/Assets/recipes/halloumi-burgers-chip/halloumi-burgers-chip-cover.webp",
-                    tags: ["Vegetarian"]
-                },
-                {
-                    name: "Teriyaki Tofu Noodle Stir-fry",
-                    image: "/Assets/recipes/teriyaki-tofu-stir-fry/teriyaki-tofu-cover.webp",
-                    tags: ["Asian", "Vegetarian"]
-                }
-            ];
-
+            
+            
             const containers = document.querySelectorAll('.recipe-container');
             const template = document.getElementById('recipe-card-template').content;
 
@@ -75,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         clone.querySelector('.recipe-image').alt = recipe.name;
                         clone.querySelector('.recipe-name').textContent = recipe.name;
                         // Set the link URL
-                        clone.querySelector('.recipe-link').href = recipe.url;
+                        
 
                         const tagsContainer = clone.querySelector('.recipe-tags');
                         recipe.tags.forEach(tag => {
@@ -90,6 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
             });
+            
+            
         })
         .catch(error => console.error('Error fetching the template:', error));
+        
 });
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Swipeable Sections</title>
+        <link rel="stylesheet" href="/styles/recipe-book.css">
+    </head>
+    <body>
+        <div class="container">
+            
+            <div class="section one">
+                <div class="page white">
+                    <div class="photo-card">
+                        <img class="photo-img">
+                        <p class="photo-desc"></p>
+                    </div>
+                </div>
+                <div class="page yellow">
+                    <div>
+                        <div class="text-nav">
+                            <p class="text-nav-title">heheh</p>
+                            <p> - Ingredient Notes</p>
+                        </div>
+                        <h3 class="recipe-title">hehe</h3>
+                        <p class="recipe-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id leo in vitae turpis massa sed elementum. Quam vulputate dignissim suspendisse in.</p>
+                    </div>
+                    <div class="nutrition">
+                        <div class="dropdown">
+                            <div class="dropdown-header">
+                                <div class="dropdown-title">Nutrition</div>
+                                <img class="dropdown-icon" src="/Assets/icons/dropdown-down-aqua.svg">
+                            </div>
+                            <div class="dropdown-content">
+                                <p>ingredient</p>
+                            </div>
+                        </div>
+                        
+                            
+                        
+                    </div>
+                </div>
+                <div class="page cream">
+                    <h4 class="title">Ingredient Notes</h4>
+                    <div class="ingredient-container">
+                        <div class="ingredient">
+                            <label for="ingredients" class="checkbox">
+                                <input class="checkbox ingredient" type="checkbox" id="ingredients">
+                                <span class="custom-checkbox"></span>
+                            </label>
+                            <p class="ingredient-name">hello</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">Section 2</div>
+            <div class="section">Section 3</div>
+            <div class="section">Section 4</div>
+            <div class="section">Section 5</div>
+            <div class="section">Section 6</div>
+        </div>
+        
+        <div class="btn-container mobile">
+            <button class="btn prev" onclick="prevSection()">
+                <img class="btn-icon previous" src="/Assets/icons/back-arrow.svg">
+                <p class="btn-text">Prev Page</p>
+            </button>
+            <button class="btn next" onclick="nextSection()">
+                <p class="btn-text">Next Page</p>
+                <img class="btn-icon forward" src="/Assets/icons/next-arrow.svg">
+            </button>
+        </div>
+
+        <div class="btn-container desktop">
+            <button class="btn prev" onclick="prevSection()">
+                <img class="btn-icon previous" src="/Assets/icons/back-arrow-desktop.svg">
+            </button>
+            <button class="btn next" onclick="nextSection()">
+                <img class="btn-icon forward" src="/Assets/icons/next-arrow-dekstop.svg">
+            </button>
+        </div>
+
+        <a class="back-to-recipe-btn" href="/pages/recipes/browse-recipe-page.html">
+            <img class="icon" src="/Assets/icons/back-icon.svg">
+            <p>Back to recipes</p>
+        </a>
+    
+    </body>
+    <script type="module" src="/js/recipe-book.js"></script>
+</html>
