@@ -82,13 +82,13 @@ export const recipeBook = [
     {
         name: "Teriyaki Tofu Noodle Stir-fry",
         images: [
-            "/Assets/recipes/teryiaki-tofu-stir-fry/teriyaki-tofu-cover.webp", 
+            "/Assets/recipes/teriyaki-tofu-stir-fry/teriyaki-tofu-cover.webp", 
             "/Assets/recipes/teryiaki-tofu-stir-fry/teriyaki-tofu-1.webp", 
-            "/Assets/recipesteryiaki-tofu-stir-fry/teriyaki-tofu-2.webp", 
-            "/Assets/recipes/teryiaki-tofu-stir-fry/teriyaki-tofu-3.webp", 
-            "/Assets/recipes/teryiaki-tofu-stir-fry/teriyaki-tofu-4.webp", 
-            "/Assets/recipes/teryiaki-tofu-stir-fry/teriyaki-tofu-5.webp", 
-            "/Assets/recipes/teryiaki-tofu-stir-fry/teriyaki-tofu-6.webp", 
+            "/Assets/recipesteriyaki-tofu-stir-fry/teriyaki-tofu-2.webp", 
+            "/Assets/recipes/teriyaki-tofu-stir-fry/teriyaki-tofu-3.webp", 
+            "/Assets/recipes/teriyaki-tofu-stir-fry/teriyaki-tofu-4.webp", 
+            "/Assets/recipes/teriyaki-tofu-stir-fry/teriyaki-tofu-5.webp", 
+            "/Assets/recipes/teriyaki-tofu-stir-fry/teriyaki-tofu-6.webp", 
         ],
         instructions: [
             ["Cook Noodles ", "Place noodles in a heatproof bowl and cover with boiling water. Set aside for 5 minutes to soften. Drain. While the noodles are cooking, continue with step 2."],
