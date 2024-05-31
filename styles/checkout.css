@@ -108,7 +108,6 @@ body{
     height: 80%
 }
 
-
 .meal-box-ridge{
     margin-top: 20px;
     height: 7%;
@@ -153,8 +152,8 @@ body{
     border: 4px solid #796851;
     border-radius: 100px;
     position: relative;
-    top: -97%;
-    left: 63%;
+    top: -59.5vh;
+    left: 15vw;
 }
 
 .price-container p{
@@ -168,8 +167,8 @@ body{
 
 .next-btn.desktop.confirm{
     position: relative;
-    top: -26%;
-    left: 35%;
+    top: -14.5vh;
+    right: -7.5vw;
 }
 
 /*Recipe items */
@@ -179,21 +178,20 @@ body{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 10% 2% 2% 2%;
+    padding: 50px 20px 20px 20px;
     z-index: 10;
 }
+
 .recipe-item{
     width: 100%;
-    height: 15%;
+    height: 58px;
     overflow: hidden;
     display: flex;
     background-color: #FFEDC0;
     border-radius: 9px;
 }
 
-.recipe-item img{
-    width: 20%;
-}
+
 .recipe-item p{
     font-family: 'Lora';
     font-size: 80%;
@@ -226,7 +224,7 @@ body{
 
 input[type="text"] {
     height: 45px;
-    padding: 15px;
+    padding: 14px;
     border: 2px solid #796851;
     border-radius: 9px;
     font-family: 'Lorenzo-Sans';
@@ -249,9 +247,14 @@ input[type="text"] {
 
 .personal-information-fields, .delivery-details-fields {
     flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     box-sizing: border-box;
     padding: 10px;
 }
+
+
 
 .contact-field input[type="radio"] {
     display: none;
@@ -260,49 +263,15 @@ input[type="text"] {
 .contact-field {
     width: 100%;
     display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
-.contact-container{
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
+
 .contact-container label{
     position: relative;
     right: 87%;
 }
 
-
-
-.checkbox {
-    display: flex;
-    cursor: pointer;   
-}
-
-.custom-radio {
-    width: 22px;
-    height: 22px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    color: #403021;
-    border: 2px solid #796851;
-    background-color: #FFFBF2;
-}
-
-.checkbox input[type="radio"]:checked + .custom-radio::after {
-    content: '✖'; 
-    font-size: 18px;
-}
-/*Unselected*/
-.custom-radio::after {
-    content: '';
-    display: none;
-}
-
-.checkbox input[type="radio"]:checked + .custom-radio::after {
-    display: block;
-}
 
 
 /*Address container*/
@@ -436,32 +405,36 @@ input[type="text"] {
 
 .card-input-field{
     height: 100%;
-    width: 60%;
+    width: 70%;
     padding-left: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 20px;
     z-index: 2;
 }
 
 /*Child text inputes*/
 .card-input-field div{
-    width: calc(100% - 100px);
+    width: calc(100% - 20px);
     display: flex;
     gap: 20px;
 }
-.card-input-field div input{
-    width: calc(100%/2 - 20px);
+
+
+.payment-input.cvv{
+    width: 50%;
 }
 
 /*Payment input*/
 .payment-input{
+    height: 50px !important;
     border:none !important;/*overwrite text input styles*/
 }
 
 /*Individual styles of text fields*/
 .payment-input.cardholder-name {
-    width: calc(100% - 120px);
+    width: 90%;
 }
 
 .credit-card{
@@ -471,9 +444,9 @@ input[type="text"] {
     justify-content: center;
 }
 .card-img{
-    height: 230px;
+    height: 280px;
     position: relative;
-    right: 90px;
+    right: 60px;
 }
 
 .input-display{
@@ -517,14 +490,14 @@ input[type="text"] {
     display: inline-block;
     white-space: nowrap;
     position: relative;
-    top: 33px;
+    top: 45px;
 }
 
 .input-display.expiry {
     width: 100px;
     position: relative; 
-    right: 80px;
-    top: 33px;
+    right: 35px;
+    top: 45px;
 }
 
 /*Apple pay*/
@@ -609,8 +582,8 @@ input[type="text"] {
     .next-btn.mobile{
         display: flex;
         position: fixed;
-        bottom: 6vh;
-        left: calc(100vw/2 - 16%);
+        bottom: 5vh;
+        left: calc(100vw/2 - 18%);
     }
     .next-btn.summary-page{
         bottom: 16vh;
@@ -648,21 +621,14 @@ input[type="text"] {
         display: flex;
         flex-direction: column;
     }
-    .name-field{
-        display: flex;
-        gap: 10px;
-    }
+    
+
     .top-container{
         display: flex;
         flex-direction: column;
     }
     /*Adjust size of first and last name text boxes*/
-    #firstName{
-        width: 50%;
-    }
-    #lastName{
-        width: 40%;
-    }
+    
     .contact-container{
         width: 100%;
     }
@@ -677,6 +643,7 @@ input[type="text"] {
         height: 70%;
     }
 
+    
     .payment{
         width: 100vw;
         height: 100vh;
@@ -697,17 +664,19 @@ input[type="text"] {
     .payment-form{
         flex-direction: column;
     }
+
+    
     .card-input-field{
         width: 100%;
         height: 100%;
     }
     .card-img{
-        height: 200px;
+        height: 180px;
         left:0;
     }
     .input-display{
-        right: 160px;
-        top: 35px;
+        right: 145px;
+        top: 30px;
     }
     .input-display.expiry{
         right: -30px;
@@ -717,6 +686,21 @@ input[type="text"] {
         margin-bottom: 10px;
     }
     
+    .price-container{
+        top: -48vh;
+        left: 48vw;
+    }
+
+    .input-display.cardholder-name{
+        top: 32px;
+    }
+    
+    .input-display.expiry {
+        width: 100px;
+        position: relative; 
+        right: -40px;
+        top: 32px;
+    }
 }
 
 /*Styles for the (un)successful page*/
@@ -729,7 +713,7 @@ input[type="text"] {
 }
 
 .content-container{
-    height: 45vh;
+    height: 60vh;
     width: 40vw; 
     display: flex;
     flex-direction: column;
@@ -777,9 +761,18 @@ input[type="text"] {
         align-items: center;
         justify-content: space-between;
     }
+    .content-container h1{
+        font-size: 50px;
+    }
     .content-container p{
-        font-size: 20px;
+        font-size: 18px;
         font-weight: medium;
         text-align: center;
+    }
+
+    .content-container a{
+        height: 65px;
+        width: 200px;
+        font-size: 20px;
     }
 }

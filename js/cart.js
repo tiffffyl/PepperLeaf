@@ -1,6 +1,8 @@
 //Importing recipes from recipe js page
 import { recipes } from '/js/recipes.js';
 
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const servingSizeRadios = document.querySelectorAll('input[name="serving-size"]');
     const mealQuantityRadios = document.querySelectorAll('input[name="meal-quantity"]');
@@ -12,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     async function updateDishes() {
         //Max & min dishes user can select
+        
         const quantity = document.querySelector('input[name="meal-quantity"]:checked').value;
         
         const recipeContainer = document.getElementById('recipe-scroll');
@@ -39,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const recipeImage = clone.querySelector('.recipe-image');
             const recipeName = clone.querySelector('.recipe-name');
             const recipeTags = clone.querySelector('.recipe-tags');
-
+            
             recipeCard.classList.add('recipe-checkbox');
 
             //Create the invisible checkbox
@@ -50,8 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
             checkbox.value = recipe.name;
             checkbox.style.display = 'none'; 
 
-             
-
+            
             //Set the image and alt text
             recipeImage.src = recipe.image;
             recipeImage.alt = recipe.name;

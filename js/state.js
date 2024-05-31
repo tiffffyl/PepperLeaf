@@ -31,8 +31,9 @@ function linkOpen(event){
   const recipeName = h2element.textContent;
   console.log(recipeName);  
 
-      //Store/overwrite the "active" recipe in the local storage to update the recipe
-      if (recipeName) {
-          localStorage.setItem('recipeName', recipeName);
-      }
+    //Store/overwrite the "active" recipe in the local storage to update the recipe
+    if (recipeName) {
+        localStorage.setItem('recipeName', recipeName);
+    }
+    
 }

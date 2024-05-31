@@ -8,83 +8,200 @@
     </head>
     <body>
         <div class="container">
-            
             <div class="section one">
                 <div class="page white">
                     <div class="photo-card">
-                        <img class="photo-img">
+                        <img class="photo-img" id="recipeCover" src="" alt="Recipe Image">
                         <p class="photo-desc"></p>
                     </div>
                 </div>
                 <div class="page yellow">
-                    <div>
-                        <div class="text-nav">
-                            <p class="text-nav-title">heheh</p>
-                            <p> - Ingredient Notes</p>
-                        </div>
-                        <h3 class="recipe-title">hehe</h3>
-                        <p class="recipe-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id leo in vitae turpis massa sed elementum. Quam vulputate dignissim suspendisse in.</p>
-                    </div>
-                    <div class="nutrition">
-                        <div class="dropdown">
-                            <div class="dropdown-header">
-                                <div class="dropdown-title">Nutrition</div>
-                                <img class="dropdown-icon" src="/Assets/icons/dropdown-down-aqua.svg">
+                    <div class="page-content-yellow ">
+                        <div>
+                            <div class="text-nav yellowHide">
+                                <p class="text-nav-title textNavTitle" id="textNavTitle"></p>
+                                <p> - Ingredient Notes</p>
                             </div>
-                            <div class="dropdown-content">
-                                <p>ingredient</p>
+                            <div>
+                                <div class="recipe-bar yellowMenu" id="yellowMenu">
+                                    <h3 class="recipe-title recipeTitle" id="recipeTitle"></h3>
+                                    <img class="down-arrow yellowArrow" src="/Assets/icons/down-arrow-yellow.svg">
+                                </div>
+                                
+                                <p class="recipe-desc yellowHide">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id leo in vitae turpis massa sed elementum. Quam vulputate dignissim suspendisse in.</p>
                             </div>
                         </div>
-                        
-                            
-                        
-                    </div>
-                </div>
-                <div class="page cream">
-                    <h4 class="title">Ingredient Notes</h4>
-                    <div class="ingredient-container">
-                        <div class="ingredient">
-                            <label for="ingredients" class="checkbox">
-                                <input class="checkbox ingredient" type="checkbox" id="ingredients">
-                                <span class="custom-checkbox"></span>
-                            </label>
-                            <p class="ingredient-name">hello</p>
+                        <div class="page cream">
+                            <div class="page-content-cream">
+                                <div class="title-bar creamMenu" id="creamMenu">
+                                    <h4 class="title">Ingredient Notes</h4>
+                                    <img class="down-arrow blackArrow" src="/Assets/icons/down-arrow-black.svg">
+                                </div>
+                                <div class="ingredient-container creamHide" id="ingredientContainer"></div>
+                            </div>
+                        </div>
+                        <div class="nutrition yellowHide" id="nutritionTable">
+                            <div class="dropdown" id="dropdownContainer">
+                                <div class="dropdown-header" >
+                                    <div class="dropdown-title">Nutrition</div>
+                                    <img class="dropdown-icon" src="/Assets/icons/dropdown-down-aqua.svg" alt="Dropdown Icon">
+                                </div>
+                                <div class="dropdown-content" id="dropdownContent">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="section">Section 2</div>
-            <div class="section">Section 3</div>
-            <div class="section">Section 4</div>
-            <div class="section">Section 5</div>
-            <div class="section">Section 6</div>
+            <div class="section two">
+                <div class="page white">
+                    <div class="recipe-card">
+                        <img class="photo-img" id="image1" src="" alt="Recipe Image">
+                        <p class="photo-desc"></p>
+                    </div>
+                    <div class="recipe-card">
+                        <img class="photo-img" id="image2" src="" alt="Recipe Image">
+                        <p class="photo-desc"></p>
+                    </div>
+                    <div class="recipe-card">
+                        <img class="photo-img" id="image3" src="" alt="Recipe Image">
+                        <p class="photo-desc"></p>
+                    </div>
+                </div>
+                <div class="page yellow">
+                    <div class="page-content-yellow ">
+                        <div>
+                            <!--Text navigator-->
+                            <div class="text-nav yellowHide">
+                                <p class="text-nav-title textNavTitle" id="textNavTitle"></p>
+                                <p> - Ingredient Notes - Steps</p>
+                            </div>
+                            <!-- Yellow Page header-->
+                            <div>
+                                <div class="recipe-bar yellowMenu" id="yellowMenu">
+                                    <h3 class="recipe-title recipeTitle" id="recipeTitle"></h3>
+                                    <img class="down-arrow yellow" src="/Assets/icons/down-arrow-yellow.svg">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="page cream ">
+                            <div class="instructions" id="instructions">
+                                <div class="title-bar creamMenu">
+                                    <h4 class="title">instructions</h4>
+                                    <img class="down-arrow black" src="/Assets/icons/down-arrow-black.svg">
+                                </div>
+                                <div class="steps creamHide">
+                                    <p class="steps" id="step0"></p>
+                                    <p class="steps" id="step1"></p>
+                                    <p class="steps" id="step2"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="section three">
+                <div class="page white">
+                    <div class="recipe-card">
+                        <img class="photo-img" id="image4" src="" alt="Recipe Image">
+                        <p class="photo-desc"></p>
+                    </div>
+                    <div class="recipe-card">
+                        <img class="photo-img" id="image5" src="" alt="Recipe Image">
+                        <p class="photo-desc"></p>
+                    </div>
+                    <div class="recipe-card">
+                        <img class="photo-img" id="image6" src="" alt="Recipe Image">
+                        <p class="photo-desc"></p>
+                    </div>
+                </div>
+                <div class="page yellow">
+                    <div class="page-content-yellow ">
+                        <div>
+                            <!--Text navigator-->
+                            <div class="text-nav yellowHide">
+                                <p class="text-nav-title textNavTitle" id="textNavTitle"></p>
+                                <p> - Ingredient Notes - Steps</p>
+                            </div>
+                            <!-- Yellow Page header-->
+                            <div>
+                                <div class="recipe-bar yellowMenu" id="yellowMenu">
+                                    <h3 class="recipe-title recipeTitle" id="recipeTitle"></h3>
+                                    <img class="down-arrow yellow" src="/Assets/icons/down-arrow-yellow.svg">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="page cream">
+                            <div class="instructions" id="instructions">
+                                <div class="title-bar creamMenu">
+                                    <h4 class="title">instructions</h4>
+                                    <img class="down-arrow black" src="/Assets/icons/down-arrow-black.svg">
+                                </div>
+                                <div class="steps creamHide">
+                                    <p class="steps" id="step3"></p>
+                                    <p class="steps" id="step4"></p>
+                                    <p class="steps" id="step5"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
+           
         </div>
-        
+    
         <div class="btn-container mobile">
             <button class="btn prev" onclick="prevSection()">
-                <img class="btn-icon previous" src="/Assets/icons/back-arrow.svg">
+                <img class="btn-icon previous" src="/Assets/icons/back-arrow.svg" alt="Previous Icon">
                 <p class="btn-text">Prev Page</p>
             </button>
             <button class="btn next" onclick="nextSection()">
                 <p class="btn-text">Next Page</p>
-                <img class="btn-icon forward" src="/Assets/icons/next-arrow.svg">
+                <img class="btn-icon forward" src="/Assets/icons/next-arrow.svg" alt="Next Icon">
             </button>
         </div>
-
+    
         <div class="btn-container desktop">
-            <button class="btn prev" onclick="prevSection()">
-                <img class="btn-icon previous" src="/Assets/icons/back-arrow-desktop.svg">
+            <button class="btn prev" onclick="prevSection()" id="btnPrev">
+                <img class="btn-icon previous" src="/Assets/icons/back-arrow-desktop.svg" alt="Previous Icon">
             </button>
-            <button class="btn next" onclick="nextSection()">
-                <img class="btn-icon forward" src="/Assets/icons/next-arrow-dekstop.svg">
+            <button class="btn next" onclick="nextSection()" id="btnNext">
+                <img class="btn-icon forward" src="/Assets/icons/next-arrow-dekstop.svg" alt="Next Icon">
             </button>
         </div>
-
+    
         <a class="back-to-recipe-btn" href="/pages/recipes/browse-recipe-page.html">
-            <img class="icon" src="/Assets/icons/back-icon.svg">
+            <img class="icon" src="/Assets/icons/back-icon.svg" alt="Back Icon">
             <p>Back to recipes</p>
         </a>
     
+        <script type="module" src="/js/recipe-book.js"></script>
+        <script>
+            const container = document.querySelector('.container');
+
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+            // Next & prev button functionality
+            function nextSection() {
+                container.scrollBy({
+                    left: window.innerWidth,
+                    behavior: 'smooth'
+                });
+            }
+
+            function prevSection() {
+                container.scrollBy({
+                    left: -window.innerWidth,
+                    behavior: 'smooth'
+                });
+            }
+        </script>
     </body>
-    <script type="module" src="/js/recipe-book.js"></script>
 </html>

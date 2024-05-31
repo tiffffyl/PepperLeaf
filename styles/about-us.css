@@ -113,13 +113,14 @@
 }
 
 .states{
-    top: 170vh;
-    left:-40vw; 
+    height: 25vh;
+    top: 120vh;
+    left:0vw; 
 }
 
 .tomato{
-    top: 100vh;
-    left: 50vw;
+    top: 110vh;
+    right: 15vw;
     width: 30vw;
 }
 

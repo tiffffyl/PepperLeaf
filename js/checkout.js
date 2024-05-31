@@ -1,69 +1,8 @@
 //Importing recipes from recipe js page
 import { recipes } from '/js/recipes.js';
 
-//Page/section selection
-let currentPage = 0;
-const pages = document.querySelectorAll('.page');
 
-function nextPage() {
-    if (window.innerWidth < 768 && currentPage < pages.length - 1) {
-        pages[currentPage].classList.remove('active');
-        currentPage++;
-        pages[currentPage].classList.add('active');
-    } else if (window.innerWidth >= 768 && currentPage < pages.length - 1) {
-        pages[currentPage].classList.remove('active');
-        currentPage++;
-        pages[currentPage].classList.add('active');
-        pages[currentPage - 1].style.transform = 'translateX(-100%)';
-    }
-}
 
-function prevPage() {
-    if (window.innerWidth < 768 && currentPage > 0) {
-        pages[currentPage].classList.remove('active');
-        currentPage--;
-        pages[currentPage].classList.add('active');
-    } else if (window.innerWidth >= 768 && currentPage > 0) {
-        pages[currentPage].classList.remove('active');
-        currentPage--;
-        pages[currentPage].classList.add('active');
-        pages[currentPage + 1].style.transform = 'translateX(100%)';
-    }
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-    // Initially, set the left position of the first method to 0 and others to 100%
-    var methods = document.querySelectorAll('.payment-method');
-    methods.forEach(function(method, index) {
-        if (index === 0) {
-            method.style.left = '0';
-        } else {
-            method.style.left = '100%';
-        }
-    });
-});
-
-function changePaymentMethod(methodIndex) {
-    
-    var labels = document.querySelectorAll('.payment-method-slider label');
-    labels.forEach(function(label, index) {
-        if (index + 1 === methodIndex) {
-            label.classList.add('active');
-        } else {
-            label.classList.remove('active');
-        }
-    });
-
-    
-    var methods = document.querySelectorAll('.payment-method');
-    methods.forEach(function(method, index) {
-        if (index + 1 === methodIndex) {
-            method.style.left = '0';
-        } else {
-            method.style.left = '100%';
-        }
-    });
-}
 
 //Payment method input validation and formatting
 document.addEventListener('DOMContentLoaded', function() {
@@ -124,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function(){
         //Find the recipe object with the string key
         const recipe = recipes.find(recipe => recipe.name === item);
         //Access the Name and image url of recipe
-        const { name, image } = recipe;
+        
         
         // Create a div for each recipe item
         const recipeItem = document.createElement('div');
@@ -148,44 +87,4 @@ document.addEventListener('DOMContentLoaded', function(){
     
 });
 
-function validate() {
-    const personalInfoForm = document.getElementById('personalInfoForm');
-    if(personalInfoForm.checkValidity() ){
-        placeOrder();
-    }else{
-        alert('Please fill all required inputs');
-    }
-    
-}
-
-//Function to place the order
-function placeOrder() {
-    //retrieve Input fields
-    const cardNumberInput = document.getElementById('card-number');
-    const cvvInput = document.getElementById('cvv');
-    const expiryInput = document.getElementById('expiry');
-    const cardholderNameInput = document.getElementById('cardholder-name');
-
-    let cardNumber = cardNumberInput.value;
-    cardNumber = cardNumber.replace(/\s/g, ""); //Removes the spaces in cardnumber input
-    const cvv = cvvInput.value;
-    const expiry = expiryInput.value;
-    const cardholderName = cardholderNameInput.value;
-
-    //validation creiteria for card number
-    const validCardNumber = '0123456789012345';
-    const validCVV = '123';
-    const validExpiry = '12/24';
-    const validCardholderName = cardholderName.trim().length > 0; // Just check if not empty
-
-    
-    //Check if all inputs are valid
-    if (cardNumber=== validCardNumber && cvv === validCVV && expiry === validExpiry && validCardholderName) {
-        //go to the success page
-        window.location.href = '/pages/order/payment/payment-successful.html';
-    } else {
-        //go to unsuccessful page
-        window.location.href = '/pages/order/payment/payment-unsuccessful.html';
-    }
-}
 

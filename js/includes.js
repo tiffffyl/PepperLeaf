@@ -60,6 +60,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
             });
+
+            const link = document.querySelectorAll('.recipe-link');
+            link.forEach(link => {
+                link.href = "/pages/recipes/recipe-book.html";
+            });
             
             
         })

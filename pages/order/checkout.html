@@ -64,25 +64,12 @@
                         <div class="personal-information-fields">
                             <p class="field-title">Personal information:</p>
                             <div class="name-field">
-                                <input type="text" id="firstName" name="firstName" placeholder="First Name* " required>
-                                <input type="text" id="lastName" name="lastName" placeholder="Last Name* " required>
+                                <input class="firstname-input" type="text" id="firstName" name="firstName" placeholder="First Name* " required>
+                                <input class="lastName-input" type="text" id="lastName" name="lastName" placeholder="Last Name* " required>
                             </div> 
-                            <p class="field-subtitle">Contact by:</p>
                             <div class="contact-field">
-                                <div class="contact-container">
-                                    <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone Number*" required>    
-                                    <label class="checkbox" for="phoneRadio">
-                                        <input type="radio" id="phoneRadio" name="contactMethod" value="phoneNumber" required>
-                                        <span class="custom-radio"></span>
-                                    </label>
-                                </div>
-                                <div class="contact-container email">
-                                    <input type="text" id="email" name="email" placeholder="Email*" required>
-                                    <label class="checkbox" for="emailRadio">
-                                        <input type="radio" id="emailRadio" name="contactMethod" value="email" required>
-                                        <span class="custom-radio"></span>
-                                    </label>
-                                </div>
+                                <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone Number*" required>    
+                                <input type="text" id="email" name="email" placeholder="Email*" required>
                             </div>
                         </div>
                         <div class="delivery-details-fields">
@@ -113,7 +100,7 @@
                     <!--Payment Method slider bar-->
                     <div class="payment-method-slider">
                         <div class="slider-bg">
-                            <label for="method1"><input type="radio" id="method1" name="paymentMethod" onclick="changePaymentMethod(1)">Credit/Debit card</label>
+                            <label for="method1" class="active"><input type="radio" id="method1" name="paymentMethod" onclick="changePaymentMethod(1)" checked>Credit/Debit card</label>
                             <label for="method2"><input type="radio" id="method2" name="paymentMethod" onclick="changePaymentMethod(2)">Apple Pay</label>
                             <label for="method3"><input type="radio" id="method3" name="paymentMethod" onclick="changePaymentMethod(3)">Google Pay</label>
                             <label for="method4"><input type="radio" id="method4" name="paymentMethod" onclick="changePaymentMethod(4)">PayPal</label>
@@ -126,7 +113,7 @@
                                 <div class="card-input-field">
                                     <input class="payment-input cardholder-name" type="text" id="cardholder-name" name="cardholder-name" placeholder="Cardholder name" required>
                                     <input class="payment-input card-number" type="text" id="card-number" name="card-number" placeholder="Card Number" required maxlength="19" pattern="\d*">
-                                    <div>
+                                    <div class="info-container">
                                         <input class="payment-input expiry" type="text" id="expiry" name="expiry" placeholder="Expiry Date (MM/YY)" required maxlength="5" pattern="\d{2}/\d{2}">
                                         <input class="payment-input cvv" type="text" id="cvv" name="cvv" placeholder="CVV" required maxlength="3" pattern="\d*">
                                     </div>
@@ -136,7 +123,7 @@
                                     <img class="card-img" src="/Assets/icons/credit-card.svg">
                                     <div class="input-display">
                                         <p class="input-display card-number bold"></p>
-                                        <div>
+                                        <div class="info-container">
                                             <p class="input-display cardholder-name light"></p>
                                             <p class="input-display expiry light"></p>
                                         </div>
@@ -168,4 +155,112 @@
     
     <script src="/js/state.js"></script> <!--Handles active state of elements-->
     <script type="module" src="/js/checkout.js"></script>
+    <script>
+        //Page/section selection
+        let currentPage = 0;
+        const pages = document.querySelectorAll('.page');
+
+        function nextPage() {
+            if (window.innerWidth < 768 && currentPage < pages.length - 1) {
+                pages[currentPage].classList.remove('active');
+                currentPage++;
+                pages[currentPage].classList.add('active');
+            } else if (window.innerWidth >= 768 && currentPage < pages.length - 1) {
+                pages[currentPage].classList.remove('active');
+                currentPage++;
+                pages[currentPage].classList.add('active');
+                pages[currentPage - 1].style.transform = 'translateX(-100%)';
+            }
+        }
+
+        function prevPage() {
+            if (window.innerWidth < 768 && currentPage > 0) {
+                pages[currentPage].classList.remove('active');
+                currentPage--;
+                pages[currentPage].classList.add('active');
+            } else if (window.innerWidth >= 768 && currentPage > 0) {
+                pages[currentPage].classList.remove('active');
+                currentPage--;
+                pages[currentPage].classList.add('active');
+                pages[currentPage + 1].style.transform = 'translateX(100%)';
+            }
+        }
+
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            // Initially, set the left position of the first method to 0 and others to 100%
+            var methods = document.querySelectorAll('.payment-method');
+            methods.forEach(function(method, index) {
+                if (index === 0) {
+                    method.style.left = '0';
+                } else {
+                    method.style.left = '100%';
+                }
+            });
+        });
+
+        function changePaymentMethod(methodIndex) {
+            
+            var labels = document.querySelectorAll('.payment-method-slider label');
+            labels.forEach(function(label, index) {
+                if (index + 1 === methodIndex) {
+                    label.classList.add('active');
+                } else {
+                    label.classList.remove('active');
+                }
+            });
+
+            
+            var methods = document.querySelectorAll('.payment-method');
+            methods.forEach(function(method, index) {
+                if (index + 1 === methodIndex) {
+                    method.style.left = '0';
+                } else {
+                    method.style.left = '100%';
+                }
+            });
+        }
+
+        function validate() {
+            const personalInfoForm = document.getElementById('personalInfoForm');
+            if(personalInfoForm.checkValidity() ){
+                placeOrder();
+            }else{
+                alert('Please fill all required inputs');
+            }
+    
+        }
+
+        //Function to place the order
+        function placeOrder() {
+            //retrieve Input fields
+            const cardNumberInput = document.getElementById('card-number');
+            const cvvInput = document.getElementById('cvv');
+            const expiryInput = document.getElementById('expiry');
+            const cardholderNameInput = document.getElementById('cardholder-name');
+
+            let cardNumber = cardNumberInput.value;
+            cardNumber = cardNumber.replace(/\s/g, ""); //Removes the spaces in cardnumber input
+            const cvv = cvvInput.value;
+            const expiry = expiryInput.value;
+            const cardholderName = cardholderNameInput.value;
+
+            //validation creiteria for card number
+            const validCardNumber = '0123456789012345';
+            const validCVV = '123';
+            const validExpiry = '12/24';
+            const validCardholderName = cardholderName.trim().length > 0; // Just check if not empty
+
+            
+            //Check if all inputs are valid
+            if (cardNumber=== validCardNumber && cvv === validCVV && expiry === validExpiry && validCardholderName) {
+                //go to the success page
+                window.location.href = '/pages/order/payment/payment-successful.html';
+            } else {
+                //go to unsuccessful page
+                window.location.href = '/pages/order/payment/payment-unsuccessful.html';
+            }
+        }
+
+    </script>
 </html>

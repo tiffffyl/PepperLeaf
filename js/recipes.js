@@ -42,13 +42,13 @@ export const recipeBook = [
     {
         name: "Chicken Laksa",
         images: [
-            "/Assets/recipes/chicken-laksa/chicken-laksa-cover.webp", 
-            "/Assets/recipes/chicken-laska/chicken-laska-1.webp",
-            "/Assets/recipes/chicken-laska/chicken-laska-2.webp",
-            "/Assets/recipes/chicken-laska/chicken-laska-3.webp",
-            "/Assets/recipes/chicken-laska/chicken-laska-4.webp",
-            "/Assets/recipes/chicken-laska/chicken-laska-5.webp",
-            "/Assets/recipes/chicken-laska/chicken-laska-6.webp",
+            "/Assets/recipes/chicken-laksa/chicken-laska-cover.webp", 
+            "/Assets/recipes/chicken-laksa/chicken-laska-1.webp",
+            "/Assets/recipes/chicken-laksa/chicken-laska-2.webp",
+            "/Assets/recipes/chicken-laksa/chicken-laska-3.webp",
+            "/Assets/recipes/chicken-laksa/chicken-laska-4.webp",
+            "/Assets/recipes/chicken-laksa/chicken-laska-5.webp",
+            "/Assets/recipes/chicken-laksa/chicken-laska-6.webp",
         ],
         instructions: [
             ["Cook Paste ", "Heat oil in a medium saucepan over medium heat. Add chilli bean paste and cook, stirring frequently, for 30 seconds or until fragrant."],
@@ -78,6 +78,5 @@ export const recipeBook = [
             "Protein: 50.2g",
             "Sodium: 581.2mg"
         ]
-        
     }
 ];

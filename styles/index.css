@@ -450,7 +450,7 @@ p{
         width: 50vw;
         text-wrap: wrap;
         height: 80%;
-        font-size: 16px;
+        font-size: 15px;
         text-align: center;
         font-family: 'Lorenzo-sans';
     }
@@ -504,17 +504,17 @@ p{
     }
     
     .pasta-bowl {
-        height: 233px;
+        height: 220px;
         position: relative;  
-        top: -1500px; 
-        right: -100px;
+        top: -1380px; 
+        right: 190px;
     }
     
     .taco-plate {
         height: 311px;
         position: absolute;
-        top: -1800px;
-        right: 200px;
+        top: -1650px;
+        right: 10px;
     }
     
     .gyoza-plate {
