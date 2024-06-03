@@ -14,7 +14,6 @@ function toggleMenu() {
 }
 
 
-
 function toggleCart() {
   //Toggles the overlay black background
   document.querySelector('.overlay').classList.toggle('open');

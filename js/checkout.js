@@ -3,7 +3,6 @@ import { recipes } from '/js/recipes.js';
 
 
 
-
 //Payment method input validation and formatting
 document.addEventListener('DOMContentLoaded', function() {
     const inputFields = document.querySelectorAll('.payment-input');
@@ -11,19 +10,18 @@ document.addEventListener('DOMContentLoaded', function() {
     inputFields.forEach(function(inputField) {
         inputField.addEventListener('input', function() {
             let inputValue = this.value;
-            const inputClass = this.classList[1]; // Assuming the class structure is consistent
+            const inputClass = this.classList[1]; 
             const displayElement = document.querySelector(`.input-display.${inputClass}`);
-
             if (this.id === 'card-number') {
-                // Remove all non-digit characters
+                // Remove all non numbers
                 inputValue = inputValue.replace(/\D/g, '');
-                // Format the card number with spaces every 4 digits
+                // format so theres a space every 4 numbers
                 inputValue = inputValue.replace(/(\d{4})(?=\d)/g, '$1 ');
                 this.value = inputValue;
             } else if (this.id === 'expiry') {
-                // Remove all non-digit characters
+                //remove all nonnumbers
                 inputValue = inputValue.replace(/\D/g, '');
-                // Format the expiry date to MM/YY
+                //formtat inoput into MM/YY format
                 if (inputValue.length > 2) {
                     inputValue = inputValue.substring(0, 2) + '/' + inputValue.substring(2, 4);
                 }
@@ -39,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 document.addEventListener('DOMContentLoaded', function(){
-    
     
     //Accessing items stored on the local storage 
     let servingSize = localStorage.getItem('servingSize');
@@ -62,14 +59,14 @@ document.addEventListener('DOMContentLoaded', function(){
     dishArray.forEach(item => {
         //Find the recipe object with the string key
         const recipe = recipes.find(recipe => recipe.name === item);
-        //Access the Name and image url of recipe
         
         
-        // Create a div for each recipe item
+        
+        //create a div for each recipe item
         const recipeItem = document.createElement('div');
         recipeItem.classList.add('recipe-item');
 
-        // Create HTML elements for name and image
+        //Create HTML elements for name and image
         const nameElement = document.createElement('p');
         nameElement.textContent =  recipe.name;
 
@@ -77,11 +74,11 @@ document.addEventListener('DOMContentLoaded', function(){
         imageElement.src = recipe.image;
         imageElement.alt = recipe.name;
 
-        // Append name and image elements to the recipe item div
+        //Append name and image elements to the recipe item div
         
         recipeItem.appendChild(imageElement);
         recipeItem.appendChild(nameElement);
-        // Append the recipe item div to the container
+        //append recipe item div to the container
         recipeContainer.appendChild(recipeItem);
     });
     

@@ -5,7 +5,7 @@ import { recipeBook } from "/js/recipes.js";
 
 
 
-// Dropdown functionality
+//Dropdown bar
 document.addEventListener('DOMContentLoaded', function () {
     var headers = document.querySelectorAll('.dropdown-header');
 
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
             var content = this.nextElementSibling;
             var isActive = this.classList.contains('active');
 
-            // Collapse all dropdowns
+            //close the dropdown 
             document.querySelectorAll('.dropdown-content').forEach(function (item) {
                 item.style.display = 'none';
             });
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 item.classList.remove('active');
             });
 
-            // Toggle the current dropdown
+            //Toggle the dropdown
             if (!isActive) {
                 content.style.display = 'block';
                 this.classList.add('active');
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
             text.textContent = recipe.name;
         });
 
-        // Inserting cover image
+        //Inserting cover image
         const coverImage = document.getElementById('recipeCover');
         coverImage.src = recipe.images[0];
 
@@ -61,14 +61,14 @@ document.addEventListener('DOMContentLoaded', function () {
             dropdownContainer.appendChild(pTag);
         });
 
-        // Insert ingredient information
+        //Insert ingredient information
         const ingredientContainer = document.getElementById('ingredientContainer');
         recipe.ingredients.forEach((ingredient, index) => {
             // Create an ingredient div
             const ingredientDiv = document.createElement('div');
             ingredientDiv.classList.add('ingredient');
 
-            // Unique id so each label has its own checkbox
+            //Unique id so each label has its own checkbox
             const uniqueId = `ingredient-${index}`;
 
             // Create label
@@ -82,24 +82,24 @@ document.addEventListener('DOMContentLoaded', function () {
             inputElement.setAttribute('type', 'checkbox');
             inputElement.setAttribute('id', uniqueId);
 
-            // Create span for the custom checkbox icon
+            //create span for the custom checkbox icon
             const spanElement = document.createElement('span');
             spanElement.classList.add('custom-checkbox');
 
-            // Append input and span to the label
+            //Append input and span to the label
             labelElement.appendChild(inputElement);
             labelElement.appendChild(spanElement);
 
-            // Create p tag for ingredient name
+            //Create p tag for ingredient name
             const pElement = document.createElement('p');
             pElement.classList.add('ingredient-name');
             pElement.textContent = ingredient;
 
-            // Append label and p tag to ingredient div
+            //append label and p tag to ingredient div
             ingredientDiv.appendChild(labelElement);
             ingredientDiv.appendChild(pElement);
 
-            // Append ingredient div to container
+            //Append ingredient div to container
             ingredientContainer.appendChild(ingredientDiv);
         });
 

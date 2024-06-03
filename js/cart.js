@@ -2,7 +2,6 @@
 import { recipes } from '/js/recipes.js';
 
 
-
 document.addEventListener('DOMContentLoaded', function() {
     const servingSizeRadios = document.querySelectorAll('input[name="serving-size"]');
     const mealQuantityRadios = document.querySelectorAll('input[name="meal-quantity"]');
@@ -14,25 +13,26 @@ document.addEventListener('DOMContentLoaded', function() {
     
     async function updateDishes() {
         //Max & min dishes user can select
-        
         const quantity = document.querySelector('input[name="meal-quantity"]:checked').value;
-        
+        //get the html
         const recipeContainer = document.getElementById('recipe-scroll');
         recipeContainer.innerHTML = '';
         dishesContainer.innerHTML = '';
     
-        // Fetch the template HTML from the separate file
+        //Fetch the template HTML from other file
         const response = await fetch('/includes/recipe/recipe-card.html');
         const templateHTML = await response.text();
     
-        // Create a DOM element from the template HTML
+        //Create DOM element from the template HTML
         const parser = new DOMParser();
         const templateDoc = parser.parseFromString(templateHTML, 'text/html');
         const template = templateDoc.getElementById('recipe-card-template');
 
-        let checkedCount = 0; // Counter for checked checkboxes
+        //Counter for checked checkboxes
+        let checkedCount = 0; 
         const checkedItemsDiv = document.getElementById('checked-items');
-        checkedItemsDiv.innerHTML = ''; // Clear the previous content
+        //clers previous content
+        checkedItemsDiv.innerHTML = ''; 
 
 
         recipes.forEach((recipe, index) => {
@@ -91,14 +91,14 @@ document.addEventListener('DOMContentLoaded', function() {
         
         });
 
-         // Function to update the displayed checked items
+         //Uupdate the displayed checked items
         function updateCheckedItems(maxQuantity) {
-            checkedItemsDiv.innerHTML = ''; // Clear previous content
+            checkedItemsDiv.innerHTML = ''; //Clear the previous content
             const checkedItems = Array.from(document.querySelectorAll('input[name="recipe"]:checked')).map(input => input.value);
             const selectedCount = checkedItems.length;
             const maxSelection =document.querySelector('input[name="meal-quantity"]:checked').value;
 
-            // Display selected count in the existing .item-count element
+            // Display selected count in the existing element
             const itemCountElement = document.querySelector('.item-count');
             itemCountElement.textContent = `${selectedCount}/${maxSelection}`;
 
@@ -124,8 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 checkedItemsDiv.appendChild(itemDiv);
             });
         }
-
-        // Initial update of displayed checked items
+        //run the function
         updateCheckedItems();
 
         //event listerner to preven user from selecting too few dishes
@@ -141,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     
-
+    //top set local storaghe values 
     function updateLocalStorage() {
         const selectedServingSize = document.querySelector('input[name="serving-size"]:checked').value;
         const selectedMealQuantity = document.querySelector('input[name="meal-quantity"]:checked').value;

@@ -9,12 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.text())
         .then(html => {
             document.getElementById('header').innerHTML = html;
-            // Call loadDishes function after inserting the template
-            
+            //call dishFunction() to can load the dishes or something
         })
         .catch(error => console.error('Error fetching the navigation bar:', error));
 
-    // Fetch and insert the footer
+    //Fetch and insert the footer
     fetch('/includes/footer.html')
         .then(response => response.text())
         .then(html => {
@@ -22,13 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => console.error('Error fetching the footer:', error));
 
-    // Fetch the external HTML template for recipes
+    //fetch the file directory
     fetch('/includes/recipe/recipe-card.html')
         .then(response => response.text())
         .then(data => {
-            // Insert the template into the placeholder
+            //Insert the template into the placeholder HTLM tag 
             document.getElementById('template-container').innerHTML = data;
-            
             
             const containers = document.querySelectorAll('.recipe-container');
             const template = document.getElementById('recipe-card-template').content;
@@ -40,13 +38,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (recipe.tags.some(tag => containerTags.includes(tag))) {
                         const clone = document.importNode(template, true);
 
-                        // Set the image, name, and tags
+                        //Set the image, name, and tags
                         clone.querySelector('.recipe-image').src = recipe.image;
                         clone.querySelector('.recipe-image').alt = recipe.name;
                         clone.querySelector('.recipe-name').textContent = recipe.name;
-                        // Set the link URL
-                        
-
+                                                
+                        //Setting tag items
                         const tagsContainer = clone.querySelector('.recipe-tags');
                         recipe.tags.forEach(tag => {
                             const tagElement = document.createElement('span');
@@ -55,17 +52,16 @@ document.addEventListener('DOMContentLoaded', () => {
                             tagsContainer.appendChild(tagElement);
                         });
 
-                        // Append the clone to the container
+                        //Append the clone to the container
                         container.appendChild(clone);
                     }
                 });
             });
-
+            //Set all the links
             const link = document.querySelectorAll('.recipe-link');
             link.forEach(link => {
                 link.href = "/pages/recipes/recipe-book.html";
             });
-            
             
         })
         .catch(error => console.error('Error fetching the template:', error));
